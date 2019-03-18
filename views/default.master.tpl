@@ -66,14 +66,19 @@
     <footer class="page-footer sticky-footer">
       <div class="container">
         <div class="clearfix">
-          <p class="pull-left">{t c="Copyright"} &copy; {$smarty.now|date_format:"%Y"} <a href="{link path="home"}">{logo}</a></p>
+            <div class="pull-left">
+                <p>{t c="Copyright"} &copy; {$smarty.now|date_format:"%Y"} <a href="{link path="home"}">{logo}</a></p>
+            </div>
         
-          <p class="pull-right">
-              Powered by <a href="{vanillaurl}">Vanilla Forums</a>.
-              <br />
-              <small>
-                  Theme is a modified version of the <a href="https://open.vanillaforums.com/addon/bootstrap-theme">Bootstrap theme</a> by <a href="https://open.vanillaforums.com/profile/Kasper">Kasper</a>.
-          </p>
+            <div class="pull-right">
+                <p>
+                  Powered by <a href="{vanillaurl}">Vanilla Forums</a>.
+                  <br />
+                  <small>
+                      Theme is a <a href="https://github.com/TwistedTwigleg/vanilla-bootstrap"> modified version </a> of the <a href="https://open.vanillaforums.com/addon/bootstrap-theme">Bootstrap theme</a> by <a href="https://open.vanillaforums.com/profile/Kasper">Kasper</a>.
+                  </small>
+                </p>
+            </div>
           
         </div>
         {asset name="Foot"}
