@@ -3,6 +3,38 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:700,800" rel="stylesheet">
+      
+      <!-- GodotEngine.org header -->
+    <div class="container flex align-center" id="GodotEngine_Header">
+        <div id="nav_head">
+            <a id="logo-link" href="//godotengine.org/">
+                <img src="{"/themes/bootstrap/images/logo.svg"|asset_url:true:false}" alt="Godot Engine" height="48">
+                <img src="{"/themes/bootstrap/images/logo_alt.svg"|asset_url:true:false}" alt="Godot Engine" height="48" id="alt">
+            </a>
+        </div>
+        <nav id="nav">
+            <ul class="pull-left">
+                <li><a href="//godotengine.org/features">Features</a></li>
+                <li><a href="//godotengine.org/news">News</a></li>
+                <li><a href="//godotengine.org/community">Community</a></li>
+                <li><a href="//godotengine.org/more">More</a></li>
+            </ul>
+            <ul class="pull-right">
+                <li><a href="//godotengine.org/download">Download</a></li>
+                <li><a href="//docs.godotengine.org/">Learn</a></li>
+                <li>
+                    <a id="asset_lib" href="//godotengine.org/asset-library/asset">
+                        <img src="{"/themes/bootstrap/images/asset_lib.svg"|asset_url:true:false}" alt="">
+                    </a>
+                    <a id="asset_lib_alt" href="//godotengine.org/asset-library/asset">
+                        <img src="{"/themes/bootstrap/images/asset_lib_alt.svg"|asset_url:true:false}" alt="">
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+      
     {asset name="Head"}
   </head>
   <body id="{$BodyID}" class="{$BodyClass} sticky-footer-body">
@@ -75,7 +107,7 @@
                   Powered by <a href="{vanillaurl}">Vanilla Forums</a>.
                   <br />
                   <small>
-                      Theme is a <a href="https://github.com/TwistedTwigleg/vanilla-bootstrap"> modified version </a> of the <a href="https://open.vanillaforums.com/addon/bootstrap-theme">Bootstrap theme</a> by <a href="https://open.vanillaforums.com/profile/Kasper">Kasper</a>.
+                      Themes are <a href="https://github.com/TwistedTwigleg/vanilla-bootstrap"> modified versions </a> of the <a href="https://open.vanillaforums.com/addon/bootstrap-theme">Bootstrap theme</a> by <a href="https://open.vanillaforums.com/profile/Kasper">Kasper</a>.
                   </small>
                 </p>
             </div>
@@ -84,7 +116,11 @@
         {asset name="Foot"}
       </div>
     </footer>
-
-    {event name="AfterBody"}
+    
+    <div onclick="topFunction()" id="ReturnToTop" class="Button" title="Go to top">
+    <i class="Arrow"></i>
+    </div>
+    
+      {event name="AfterBody"}
   </body>
 </html>
