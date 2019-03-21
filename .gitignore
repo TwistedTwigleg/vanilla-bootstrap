@@ -1,2 +1,8 @@
-bower_components
+bower_components/bootstrap
+bower_components/bootstrap-sass-official
+bower_components/bootstrap-social
+bower_components/font-awesome
+bower_components/jquery
+bower_components/jquery-icheck
+bower_components/spin.js
 node_modules

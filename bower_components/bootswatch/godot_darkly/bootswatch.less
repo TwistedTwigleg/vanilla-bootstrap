@@ -1,0 +1,774 @@
+// Godot Darkly 0.1.0
+// Bootswatch
+// -----------------------------------------------------
+
+@import url("//fonts.googleapis.com/css?family=Lato:400,700,400italic");
+
+// Navbar =====================================================================
+
+.navbar {
+  border-width: 0;
+
+  &-default {
+
+    .badge {
+      background-color: #fff;
+      color: @navbar-default-bg;
+    }
+  }
+
+  &-inverse {
+
+    .badge {
+      background-color: #fff;
+      color: @navbar-inverse-bg;
+    }
+  }
+
+  &-brand {
+    padding: 18.5px 15px 20.5px;
+  }
+
+  &-form {
+    .form-control {
+      background-color: white;
+
+      &:focus {
+        border-color: white;
+      }
+    }
+  }
+}
+
+// Buttons ====================================================================
+
+.btn:active {
+  .box-shadow(none);
+}
+
+.btn-group.open .dropdown-toggle {
+  .box-shadow(none);
+}
+
+// Typography =================================================================
+
+.text-primary,
+.text-primary:hover {
+  color: lighten(@brand-primary, 10%);
+}
+
+.text-success,
+.text-success:hover {
+  color: @brand-success;
+}
+
+.text-danger,
+.text-danger:hover {
+  color: @brand-danger;
+}
+
+.text-warning,
+.text-warning:hover {
+  color: @brand-warning;
+}
+
+.text-info,
+.text-info:hover {
+  color: @brand-info;
+}
+
+// Tables =====================================================================
+
+table,
+.table {
+
+  a:not(.btn) {
+    text-decoration: underline;
+  }
+
+  .dropdown-menu a {
+    text-decoration: none;
+  }
+
+  .success,
+  .warning,
+  .danger,
+  .info {
+    color: #fff;
+
+    a {
+      color: #fff;
+    }
+  }
+
+  > thead > tr > th,
+  > tbody > tr > th,
+  > tfoot > tr > th,
+  > thead > tr > td,
+  > tbody > tr > td,
+  > tfoot > tr > td {
+    border: none;
+  }
+
+  &-bordered > thead > tr > th,
+  &-bordered > tbody > tr > th,
+  &-bordered > tfoot > tr > th,
+  &-bordered > thead > tr > td,
+  &-bordered > tbody > tr > td,
+  &-bordered > tfoot > tr > td {
+    border: 1px solid @table-border-color;
+  }
+}
+
+// Forms ======================================================================
+
+input,
+textarea {
+  color: @input-color;
+}
+
+.form-control,
+input,
+textarea {
+  border: none;
+  .box-shadow(none);
+
+  &:focus {
+    .box-shadow(none);
+  }
+}
+
+.has-warning {
+  .help-block,
+  .control-label,
+  .radio,
+  .checkbox,
+  .radio-inline,
+  .checkbox-inline,
+  .form-control-feedback {
+    color: @brand-warning;
+  }
+
+  .form-control,
+  .form-control:focus {
+    .box-shadow(none);
+  }
+
+  .input-group-addon {
+    border-color: @brand-warning;
+  }
+}
+
+.has-error {
+  .help-block,
+  .control-label,
+  .radio,
+  .checkbox,
+  .radio-inline,
+  .checkbox-inline,
+  .form-control-feedback {
+    color: @brand-danger;
+  }
+
+  .form-control,
+  .form-control:focus {
+    .box-shadow(none);
+  }
+
+  .input-group-addon {
+    border-color: @brand-danger;
+  }
+}
+
+.has-success {
+  .help-block,
+  .control-label,
+  .radio,
+  .checkbox,
+  .radio-inline,
+  .checkbox-inline,
+  .form-control-feedback {
+    color: @brand-success;
+  }
+
+  .form-control,
+  .form-control:focus {
+    .box-shadow(none);
+  }
+
+  .input-group-addon {
+    border-color: @brand-success;
+  }
+}
+
+.input-group-addon {
+  color: @text-color;
+}
+
+// Navs =======================================================================
+
+.nav {
+  .open > a,
+  .open > a:hover,
+  .open > a:focus {
+    border-color: @nav-tabs-border-color;
+  }
+}
+
+.nav-tabs > li > a,
+.nav-pills > li > a {
+  color: #fff;
+}
+
+.pager {
+  a,
+  a:hover {
+    color: #fff;
+  }
+
+  .disabled {
+    &>a,
+    &>a:hover,
+    &>a:focus,
+    &>span {
+      background-color: @pagination-disabled-bg;
+    }
+  }
+}
+
+.breadcrumb a {
+  color: #fff;
+}
+
+// Indicators =================================================================
+
+.close {
+  text-decoration: none;
+  text-shadow: none;
+  opacity: 0.4;
+
+  &:hover,
+  &:focus {
+    opacity: 1;
+  }
+}
+
+.alert {
+  .alert-link {
+    color: #fff;
+    text-decoration: underline;
+  }
+}
+
+// Progress bars ==============================================================
+
+.progress {
+  height: 10px;
+  .box-shadow(none);
+  .progress-bar {
+    font-size: 10px;
+    line-height: 10px;
+  }
+}
+
+// Containers =================================================================
+
+.well {
+  .box-shadow(none);
+}
+
+a.list-group-item {
+
+  &.active,
+  &.active:hover,
+  &.active:focus {
+    border-color: @list-group-border;
+  }
+
+  &-success {
+    &.active {
+      background-color: @state-success-bg;
+    }
+
+    &.active:hover,
+    &.active:focus {
+      background-color: darken(@state-success-bg, 5%);
+    }
+  }
+
+  &-warning {
+    &.active {
+      background-color: @state-warning-bg;
+    }
+    
+    &.active:hover,
+    &.active:focus {
+      background-color: darken(@state-warning-bg, 5%);
+    }
+  }
+
+  &-danger {
+    &.active {
+      background-color: @state-danger-bg;
+    }
+    
+    &.active:hover,
+    &.active:focus {
+      background-color: darken(@state-danger-bg, 5%);
+    }
+  }
+}
+
+.popover {
+  color: @text-color;
+}
+
+.panel-default > .panel-heading {
+  background-color: @panel-footer-bg;
+}
+
+
+// =================================================================
+// ****** ADDATIONAL CSS/LESS ******
+// NOTE: Many of these are temporary work arounds
+// that ideally should be replaced (if possible) by CSS/LESS
+// in variables.less!
+
+// The box just below new discussion, that contains categories, activity, etc.
+//
+// This box is visible when viewing Categories, when in the activity page, and
+// when looking at a profile.
+div.BoxFilter.BoxDiscussionFilter, div.BoxFilter.BoxActivityFilter, div.BoxFilter.BoxProfileFilter
+{
+    background-color: @gray;
+    border-radius: 12px;
+    
+    // Change the text links so they are colored properly.
+    & li
+    {
+        // Not sure on this, might look better without...
+        border-top-width: 2px;
+        border-top-color: rgba(1, 1, 1, 0.2);
+        border-top-style: solid;
+        
+        & a
+        {
+            color: white;
+        }
+    }
+}
+
+// The categories list
+div.Box.BoxCategories
+{
+    & ul.PanelInfo.PanelCategories li
+    {
+        // Not sure on this, might look better without...
+        border-top-width: 2px;
+        border-top-color: rgba(1, 1, 1, 0.2);
+        border-top-style: solid;
+    }
+    & li.ClearFix.Heading
+    {
+        background-color: @gray-dark;
+        color: white;
+        font-weight: bold;
+    }
+}
+
+// Making the username in the discusison list readable and add a colored border.
+span.MItem.DiscussionAuthor
+{    
+    // Add some padding so it is easier to read the name of the user.
+    padding-left: 4px;
+    padding-right: 4px;
+    
+    // I'd rather use a different color, but I cannot find a way to color the <a> element.
+    // Anything I try to add to the <a> element gets overriden by another CSS file...
+    background-color: @gray-darker;
+    border-radius: 6px;
+}
+
+// Add some additional styling to the activity feed.
+ul.DataList.Activities
+{
+    // Making the username in the activity list readable and add a colored border.
+    & .Title,
+    {
+        padding-bottom: 8px;
+        
+        & a
+        {
+            // Add some padding so it is easier to read the name of the user.
+            padding-left: 4px;
+            padding-right: 4px;
+
+            background-color: @gray-darker;
+            border-radius: 6px;
+        }
+    }
+    // Making the username in replies in the activity list readable and add a colored border.
+    & .ActivityComment
+    {
+        & a.Title.Name
+        {
+            // Add some padding so it is easier to read the name of the user.
+            padding-bottom: 8px;
+            padding-left: 4px;
+            padding-right: 4px;
+
+            background-color: @gray-darker;
+            border-radius: 6px;
+        }
+    }
+    
+}
+
+// Make the "Next" and "Previous" buttons in the activity log use white as the link color
+div.Pager.PrevNextPager
+{
+    & a
+    {
+        color: white;
+    }
+}
+
+// Making the username text color readable,
+// making sure it has space, and adding a colored border.
+span.Author a.Username
+{
+    color: #fff;
+    margin-right: 8px;
+    
+    // Add some padding so it is easier to read the name of the user.
+    padding-left: 4px;
+    padding-right: 4px;
+    
+    background-color: @gray-darker;
+    border-radius: 6px;
+}
+
+// Making the post count have a colored border.
+span.MItem.PostCount
+{
+    background-color: @gray-darker;
+    border-radius: 6px;
+    
+    // Add some padding so it is easier to read the number of posts
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+// Role title coloring and styling.
+span.MItem.RoleTitle
+{
+    border-radius: 6px;
+    color: white;
+    margin-right: 8px;
+    background-color: @gray;
+    font-size: 85%;
+    
+    // Add some padding so it is easier to read the name of the role.
+    padding-left: 4px;
+    padding-right: 4px;
+    
+    // If the role is a special role, then use a special color!
+    &[id="Admin"]
+    {
+        background-color: #3f0004;
+    }
+    &[id="Mod"]
+    {
+        background-color: #be7309;
+    }
+    &[id="Godot Developer"]
+    {
+        background-color: #fff;
+        color: #3d8fcc;
+    }
+}
+
+// Change the accepted answer comment background color
+ul.MessageList.DataList.AcceptedAnswers li div.Comment
+{
+    background-color: #191f26;
+}
+
+// Change the color of the accepted QnA box and QnA tag.
+span.Tag.QnA-Box.QnA-Accepted, span.Tag.QnA-Tag-Accepted
+{
+    background-color: #2f82d0;
+}
+// Change the color of the question QnA box and QnA tag.
+span.Tag.QnA-Box.QnA-Question, span.Tag.QnA-Tag-Question
+{
+    background-color: #100e2a
+}
+
+// NOTE: CSS for forum tags can be found in the TagExtended plugin!
+
+// Add some extra padding to the "Did this answer the question" section.
+div.ActionBlock.QnA-Feedback
+{
+    padding-top: 24px;
+    
+    span.DidThisAnswer
+    {
+        padding-right: 8px;
+    }
+}
+
+// Make the emoji popup for the rich editor a little bit bigger so you can view all
+// of the emojis without needing to scroll horizontally.
+div#emojiPopover5-contents
+{
+    width: 300px;
+}
+
+// Make the guest box have a bit of padding
+div.Box.GuestBox
+{
+    padding-bottom: 32px;
+}
+
+// Change the background color of the items in the tag cloud
+ul.TagCloud li
+{
+    background-color: @gray;
+}
+
+// Change the color of the close (cross) buttons
+a.Close, a.Delete
+{
+    color: @gray;
+}
+
+// Custom styling for the categories table
+table.DataTable.CategoryTable
+{
+    // Each table row...
+    & tbody tr
+    {
+        border-bottom-width: 2px;
+        border-bottom-color: rgba(1, 1, 1, 0.2);
+        border-bottom-style: solid;
+        
+        // When the table row is active, make the text white
+        &:active, &:hover
+        {
+            color: white;
+            
+            // For some reason the link (a) needs to be specifically overwritten.
+            & td div h3 a
+            {
+                color: white;
+            }
+            
+            & td div h2 a
+            {
+                color: white;
+            }
+            
+        }
+        
+        // Make the link (a) bold with no underscores
+        & td div h3 a
+        {
+            font-weight: bold;
+            text-decoration: none;
+        }
+        
+        // Make sure to mark the categories that are only for holding
+        // sub categories as "Heading" in Vanilla for proper styling!
+    }
+}
+
+// Change the color of the category group labels.
+h2.H.categoryList-heading
+{
+    color: white;
+}
+
+// Custom styling for the discusisons and activies list
+ul.DataList.Discussions, ul.DataList.Activities
+{
+    & li
+    {
+        border-bottom-width: 2px;
+        border-bottom-color: rgba(1, 1, 1, 0.2);
+        border-bottom-style: solid;
+        
+        & div.Options
+        {
+            color: @gray;
+            &:active, &:hover
+            {
+                color: @link-color;
+            }
+        }
+    }
+}
+
+// Hide the most commented box.
+// TODO: need to decide what to do with this. This is hidden in the
+// old forums though, and for good reason I think.
+div.Box.BoxLatestComment
+{
+    display: none;
+}
+
+// GodotEngine.org-like header stuff (practically copied from GodotEngine.org)
+// THIS IS FOR DARK THEMES! See bootswatch.less in the Godot-Like theme for the header
+// for light colored themes!
+//
+// Note: This is kinda hacky, but it makes a similar looking result, so
+// I cannot complain too much. Probably needs to be redone in the future!
+// TODO: document this!
+div[id="GodotEngine_Header"]
+{
+    align-items: center;
+    width: 100%;
+    overflow: initial;
+    display: flex;
+    max-width: 1200px;
+    margin: auto;
+    
+    // For some reason I cannot actually get the element to take %100 of the
+    // width, so no setting background-color for now!
+    
+    padding-top: 8px;
+    padding-bottom: 8px;
+    
+    & div[id="nav_head"]
+    {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        
+        padding-right: 24px;
+        
+        & a[id="logo-link"]
+        {
+            height: 48px;
+            margin-right: 48px;
+            
+            // Use the proper Godot logo image!
+            // For the Darkly theme, we do not want to use the default logo, the text is
+            // too dark, so we want to use the alternate logo instead!
+            & img
+            {
+                display: none;
+                &[id="alt"]
+                {
+                    display: inherit;
+                }
+            }
+        }
+    }
+    & nav
+    {
+        width: inherit;
+        padding-right: 0px;
+        
+        & ul.pull-left
+        {
+            display: flex;
+            align-items: center;
+            height: 100%;
+            
+            list-style: none;
+            margin: 0px;
+            padding-left: 0px;
+            
+            & li
+            {
+                padding-left: 16px;
+                padding-right: 16px;
+                
+                & a
+                {
+                    font-family: 'Montserrat', 'sans-serif';
+                    text-decoration: none;
+                    font-size: 16px;
+                    font-weight: bold;
+                    color: white;
+                    
+                    &:hover
+                    {
+                        color: #dd7d76;
+                    }
+                }
+            }
+        }
+        & ul.pull-right
+        {   
+            display: flex;
+            align-items: center;
+            height: 100%;
+            
+            list-style: none;
+            margin: 0px;
+            padding-left: 0px;
+            
+            & li
+            {
+                //padding-left: 0px;
+                padding-left: 16px;
+                padding-right: 16px;
+                
+                & a
+                {
+                    font-family: 'Montserrat', 'sans-serif';
+                    text-decoration: none;
+                    font-size: 16px;
+                    font-weight: bold;
+                    color: white;
+                    
+                    &:hover
+                    {
+                        color: #dd7d76;
+                    }
+                }
+                & a[id="asset_lib"]
+                {
+                    display: none;
+                }
+                & a[id="asset_lib_alt"]
+                {
+                    display: inherit;
+                }
+            }
+        }
+    }
+}
+
+// CSS for the return to top button
+#ReturnToTop {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 48px; /* Place the button at the bottom of the page */
+    left: 48px; /* Place the button 48px from the left */
+    z-index: 99; /* Make sure it does not overlap */
+    /* border: none; Remove borders */
+    outline: none; /* Remove outline */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    font-size: 18px; /* Increase font size */
+    text-transform: uppercase;
+    
+    // Use a up arrow with CSS
+    // Gotten from : https://www.w3schools.com/howto/howto_css_arrows.asp
+    & .Arrow
+    {
+        border: solid white;
+        border-width: 0 8px 8px 0;
+        display: inline-block;
+        padding: 8px;
+        
+        // Move the arrow down just a bit
+        position: relative;
+        bottom: -8px;
+        
+        transform: rotate(-135deg);
+        -webkit-transform: rotate(-135deg);
+    }
+}
