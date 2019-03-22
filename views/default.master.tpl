@@ -12,8 +12,14 @@
                 <img src="{"/themes/bootstrap/images/logo.svg"|asset_url:true:false}" alt="Godot Engine" height="48">
                 <img src="{"/themes/bootstrap/images/logo_alt.svg"|asset_url:true:false}" alt="Godot Engine" height="48" id="alt">
             </a>
+            
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar_godot_links" id="nav_toggle_btn">
+                <img src="{"/themes/bootstrap/images/hamburger.svg"|asset_url:true:false}" alt="menu">
+                <img src="{"/themes/bootstrap/images/hamburger_alt.svg"|asset_url:true:false}" alt="menu" id="alt">
+            </button>
+            
         </div>
-        <nav id="nav">
+        <nav class="navbar_godot_links collapse" id="nav_godot_links">
             <ul class="pull-left">
                 <li><a href="//godotengine.org/features">Features</a></li>
                 <li><a href="//godotengine.org/news">News</a></li>

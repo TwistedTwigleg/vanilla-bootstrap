@@ -775,3 +775,115 @@ div[id="GodotEngine_Header"]
     }
 }
 
+// Browser size related media queries!
+// *********************************************************
+// If the size of the window is MORE than 1000px...
+@media (min-width: 1000px)
+{
+    // Only apply settings to the items under GodotEngine_Header
+    div[id="GodotEngine_Header"]
+    {
+        
+        // Make the mobile/small-screen only navigation toggle buttons invisible.
+        #nav_toggle_cb, #nav_toggle_btn
+        {
+           display: none;
+           line-height: 0px;
+        }
+
+        // Make the navigation menu holding all of the Godot links visible!
+        //
+        // We do this by overriding the collapse property, which should make the content within the
+        // collapsable menu always visible, since we are using the important tag.
+        & nav[id="nav_godot_links"].in, & nav[id="nav_godot_links"].collapsing, & nav[id="nav_godot_links"].collapse
+        {
+            display: block!important;
+            visibility: inherit;
+        }
+    }
+}
+
+
+// If the size of the browser window is LESS than 1000px...
+@media (max-width: 1000px)
+{
+    // Add some padding to the container section so the footer isn't touching whatever is at the
+    // bottom of the web page.
+    section.container
+    {
+        padding-bottom: 24px;
+    }
+    
+    // Only apply settings to the items under GodotEngine_Header
+    div[id="GodotEngine_Header"]
+    {
+        
+        // Change the display to inherit so the menu toggle is positioned on the right.
+        display: inherit;
+        
+        // Remove any padding on the right from nav_head, so the menu toggle is positioned closer
+        // to the right edge of the screen.
+        div[id="nav_head"]
+        {
+            padding-right: 0;
+        }
+        // Reset any margin or padding applied to the menu toggle button. Then add a bit of right
+        // padding so the menu toggle isn't on the right edge of the browser.
+        button[id="nav_toggle_btn"]
+        {
+            margin: 0;
+            padding: 0;
+            padding-right: 12px;
+        }
+        
+        // Reset any margin applied to the logo link.
+        #logo-link
+        {
+          margin: 0;    
+        }
+        
+        // Make the menu toggle button visible
+        #nav_toggle_cb, #nav_toggle_btn
+        {
+            display: block;
+            line-height: 0px;
+
+            // Make the correct hamburger image appear based on the color of the theme.
+            & img
+            {
+                display: inherit;
+                &[id="alt"]
+                {
+                    display: none;
+                }
+            }
+        }
+        
+        // Make sure the items in the Godot header are on a vertical list.
+        nav ul
+        {
+          align-items: flex-start;
+          flex-direction: column;
+          height: auto;
+        }
+        // Add some margin and padding so the items are positioned and styled correctly.
+        nav > ul
+        {
+          margin-bottom: 16px;
+          margin-top: 16px;
+        }
+        nav ul > li
+        {
+          padding: 0;
+          padding-top: 16px;
+          width: 100%;
+        }
+        nav ul a
+        {
+          width: 100%;
+          display: block;
+        }
+    }
+}
+// *********************************************************
+
