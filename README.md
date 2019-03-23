@@ -4,24 +4,6 @@
 
 Bootstrap for Vanilla has been rewritten from scratch on top of [Bootstrap 3](http://getbootstrap.com) in this second installation of the most popular theme for Vanilla Forums. Kickstart your Vanilla-powered community forums with a fresh and solid theme that is ready to be customized to your heart's desires.
 
-## TwistedTwigleg additions/notes
-
-This is a modified version of the Bootstrap Vanilla forum theme by Kasperisager.
-
-The primary changes is the addition of a new theme: Godot_Like theme.
-
-The Godot_Like theme is a edited version of the Darkly theme that is designed to mirror the color and style of [GodotEngine.org](https://GodotEngine.org) as closely as possible.
-
-The theme is still very much a work in progress! Check out the test forum server on RandomMomentania for an idea of what the theme looks like. Note that the theme has additions specific to the plugins included in said server, as well as relying on a modified version of the Role Titles plugin.
-
-### Installing into Vanilla notes
-
-I wanted to write down some things I noticed while working on this theme:
-
-* The theme folder **HAS** to be named **bootstrap**. No uppercase letters, despite what you might find on the internet. It seems the theme required being placed in a folder called `Bootstrap` before, but that is no longer the case and the folder has to be named `bootstrap`.
-* `default.master` in the `views` folder is responible for the layout of the main page.
-* To make a new theme, it is easiest to copy one of the themes in the `bower_components/bootswatch` folder and make adjustmensts from there. For a new theme, you also need to add a `.LESS` file with the same name as the folder of your theme in `bower_components/bootswatch`.
-
 ## Getting started
 
 To get started using Bootstrap for Vanilla, either:
@@ -62,6 +44,8 @@ Compiles all theme assets using Gulp. LESS stylesheets will be compiled to [`des
 
 #### Watch - `npm run watch`
 Watches the assets for changes and runs the appropriate Gulp tasks. Also starts a Livereload server that will push the changes to your Vanilla installation automatically.
+
+> __Notice__: This is currently not working with Gulp 4.0.0!
 
 ## [Issue tracking](https://github.com/kasperisager/vanilla-bootstrap/issues)
 

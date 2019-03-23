@@ -51,7 +51,7 @@ gulp.task('wiredep', function () {
     .pipe(gulp.dest('less'));
 });
 
-gulp.task('default', ['styles', 'scripts']);
+gulp.task('default', gulp.series('styles', 'scripts'));
 
 gulp.task('watch',  function () {
   $.livereload.listen();
