@@ -390,6 +390,30 @@ div.Box.BoxCategories
     }
 }
 
+// Make the light gray link text a different color when the mouse is scrolled over it.
+// This makes things, like the username, readable when scrolling over the table element.
+table.DataTable.CategoryTable
+{
+    & tbody tr:hover
+    {
+        & td.BlockColumn.LatestPost div
+        {
+            & div.Meta
+            {
+                color: @godot_gray;
+                & a
+                {
+                    color: @godot_gray;
+                }
+            }
+            & a.BlockTitle.LatestPostTitle
+            {
+                color: @godot_gray;
+            }
+        }
+    }
+}
+
 // Making the username in the discusison list readable and add a colored border.
 span.MItem.DiscussionAuthor
 {    
@@ -444,6 +468,30 @@ div.Pager.PrevNextPager
     {
         color: white;
         border-radius: 0;
+    }
+}
+
+// Make the buttons for changing the page (in a discussion and while looking at categories)
+// rectangles instead of rounded rectangles
+div#PagerBefore.Pager, div#PagerAfter.Pager
+{
+    & a
+    {
+        border-radius: 0;
+    }
+    & span
+    {
+        border-radius: 0;
+    }
+}
+
+// Make the box at the button when making a comment/post light-gray instead of dark blue.
+// This makes the buttons stand out a bit. Not 100% sure if we should keep this or not...
+form[id="Form_Comment"]
+{
+    & div div.Buttons
+    {
+        background-color: @godot_light_gray;
     }
 }
 
