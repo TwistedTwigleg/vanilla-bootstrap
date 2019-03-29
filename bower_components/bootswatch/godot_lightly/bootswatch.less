@@ -241,8 +241,12 @@ textarea {
   }
 }
 
-.breadcrumb a {
-  color: #fff;
+.breadcrumb {
+
+  border-radius: 0px;
+  & a {
+    color: #fff;
+  }
 }
 
 // Indicators =================================================================
@@ -279,6 +283,8 @@ textarea {
 // Containers =================================================================
 
 .well {
+  padding: 0px;
+  border: none;
   .box-shadow(none);
 }
 
@@ -431,7 +437,7 @@ span.MItem.DiscussionAuthor
 ul.DataList.Activities
 {
     // Making the username in the activity list readable and add a colored border.
-    & .Title,
+    & .Title
     {
         padding-bottom: 8px;
         
@@ -548,6 +554,24 @@ span.MItem.RoleTitle
         background-color: #fff;
         color: @godot_blue;
     }
+}
+
+// Discussion Item (opening post)
+div.Item.ItemDiscussion{
+    border: none;
+    border-radius: 0;
+    & div *{
+      border-radius: 0;
+    }
+}
+
+// Comment Item (following posts)
+li.Item.ItemComment{
+  border: none;
+  border-radius: 0;
+  & div *{
+    border-radius: 0;
+  }
 }
 
 // Change the accepted answer comment background color
@@ -750,6 +774,7 @@ div[id="GodotEngine_Header"]
                     text-decoration: none;
                     font-size: 16px;
                     font-weight: bold;
+                    text-transform: uppercase;
                     color: #333f67;
                     
                     &:hover
@@ -781,6 +806,7 @@ div[id="GodotEngine_Header"]
                     text-decoration: none;
                     font-size: 16px;
                     font-weight: bold;
+                    text-transform: uppercase;
                     color: #333f67;
                     
                     &:hover
