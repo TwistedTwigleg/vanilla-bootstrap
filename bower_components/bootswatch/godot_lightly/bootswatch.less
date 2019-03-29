@@ -556,6 +556,24 @@ span.MItem.RoleTitle
     }
 }
 
+// Discussion Item (opening post)
+div.Item.ItemDiscussion{
+    border: none;
+    border-radius: 0;
+    & div *{
+      border-radius: 0;
+    }
+}
+
+// Comment Item (following posts)
+li.Item.ItemComment{
+  border: none;
+  border-radius: 0;
+  & div div{
+    border-radius: 0;
+  }
+}
+
 // Change the accepted answer comment background color
 ul.MessageList.DataList.AcceptedAnswers li div.Comment
 {
