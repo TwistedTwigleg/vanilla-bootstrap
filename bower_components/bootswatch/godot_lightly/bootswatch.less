@@ -50,6 +50,11 @@
   .box-shadow(none);
 }
 
+.btn
+{
+    border-radius: 0;
+}
+
 // Typography =================================================================
 
 .text-primary,
@@ -340,8 +345,8 @@ a.list-group-item {
 // when looking at a profile.
 div.BoxFilter.BoxDiscussionFilter, div.BoxFilter.BoxActivityFilter, div.BoxFilter.BoxProfileFilter
 {
-    background-color: @godot_gray;
-    border-radius: 12px;
+    background-color: @godot_white;
+    border-radius: 0;
     
     // Change the text links so they are colored properly.
     & li
@@ -350,9 +355,11 @@ div.BoxFilter.BoxDiscussionFilter, div.BoxFilter.BoxActivityFilter, div.BoxFilte
         border-top-width: 2px;
         border-top-color: rgba(1, 1, 1, 0.2);
         border-top-style: solid;
+        border-radius: 0;
         
         & a
         {
+            border-radius: 0;
             color: black;
 
             &:hover, &:active
@@ -373,11 +380,37 @@ div.Box.BoxCategories
         border-top-color: rgba(1, 1, 1, 0.2);
         border-top-style: solid;
     }
+    
+    // The headings (like Godot Community, Godot Help, ect)
     & li.ClearFix.Heading
     {
-        background-color: @godot_dark_blue;
+        background-color: @godot_blue;
         color: white;
         font-weight: bold;
+    }
+}
+
+// Make the light gray link text a different color when the mouse is scrolled over it.
+// This makes things, like the username, readable when scrolling over the table element.
+table.DataTable.CategoryTable
+{
+    & tbody tr:hover
+    {
+        & td.BlockColumn.LatestPost div
+        {
+            & div.Meta
+            {
+                color: @godot_gray;
+                & a
+                {
+                    color: @godot_gray;
+                }
+            }
+            & a.BlockTitle.LatestPostTitle
+            {
+                color: @godot_gray;
+            }
+        }
     }
 }
 
@@ -390,8 +423,8 @@ span.MItem.DiscussionAuthor
     
     // I'd rather use a different color, but I cannot find a way to color the <a> element.
     // Anything I try to add to the <a> element gets overriden by another CSS file...
-    background-color: @godot_light_gray; //lightgray;
-    border-radius: 6px;
+    background-color: @godot_light_gray;
+    border-radius: 0;
 }
 
 // Add some additional styling to the activity feed.
@@ -409,7 +442,7 @@ ul.DataList.Activities
             padding-right: 4px;
 
             background-color: @godot_light_gray;
-            border-radius: 6px;
+            border-radius: 0;
         }
     }
     // Making the username in replies in the activity list readable and add a colored border.
@@ -418,12 +451,11 @@ ul.DataList.Activities
         & a.Title.Name
         {
             // Add some padding so it is easier to read the name of the user.
-            padding-bottom: 8px;
             padding-left: 4px;
             padding-right: 4px;
 
             background-color: @godot_light_gray;
-            border-radius: 6px;
+            border-radius: 0;
         }
     }
     
@@ -435,6 +467,31 @@ div.Pager.PrevNextPager
     & a
     {
         color: white;
+        border-radius: 0;
+    }
+}
+
+// Make the buttons for changing the page (in a discussion and while looking at categories)
+// rectangles instead of rounded rectangles
+div#PagerBefore.Pager, div#PagerAfter.Pager
+{
+    & a
+    {
+        border-radius: 0;
+    }
+    & span
+    {
+        border-radius: 0;
+    }
+}
+
+// Make the box at the button when making a comment/post light-gray instead of dark blue.
+// This makes the buttons stand out a bit. Not 100% sure if we should keep this or not...
+form[id="Form_Comment"]
+{
+    & div div.Buttons
+    {
+        background-color: @godot_light_gray;
     }
 }
 
@@ -450,14 +507,14 @@ span.Author a.Username
     padding-right: 4px;
     
     background-color: #455380;
-    border-radius: 6px;
+    border-radius: 0;
 }
 
 // Making the post count have a colored border.
 span.MItem.PostCount
 {
     background-color: #1f2c55;
-    border-radius: 6px;
+    border-radius: 0;
     
     // Add some padding so it is easier to read the number of posts
     padding-left: 4px;
@@ -467,7 +524,7 @@ span.MItem.PostCount
 // Role title coloring and styling.
 span.MItem.RoleTitle
 {
-    border-radius: 6px;
+    border-radius: 0;
     color: white;
     margin-right: 8px;
     background-color: #586684;
@@ -539,7 +596,7 @@ div.Box.GuestBox
 // Change the background color of the items in the tag cloud
 ul.TagCloud li
 {
-    background-color: @godot_gray;
+    background-color: @godot_white;
 }
 
 // Change the color of the close (cross) buttons
@@ -605,7 +662,7 @@ ul.DataList.Discussions, ul.DataList.Activities
         
         & div.Options
         {
-            color: @godot_gray;
+            color: @godot_white;
             &:active, &:hover
             {
                 color: @godot_coral;
