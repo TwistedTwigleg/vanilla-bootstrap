@@ -351,7 +351,7 @@ a.list-group-item {
 // when looking at a profile.
 div.BoxFilter.BoxDiscussionFilter, div.BoxFilter.BoxActivityFilter, div.BoxFilter.BoxProfileFilter
 {
-    background-color: @godot_white;
+    background-color: white;
     border-radius: 0;
     
     // Change the text links so they are colored properly.
@@ -390,7 +390,7 @@ div.Box.BoxCategories
     // The headings (like Godot Community, Godot Help, ect)
     & li.ClearFix.Heading
     {
-        background-color: @godot_blue;
+        background-color: @primary-color;
         color: white;
         font-weight: bold;
     }
@@ -429,7 +429,7 @@ span.MItem.DiscussionAuthor
     
     // I'd rather use a different color, but I cannot find a way to color the <a> element.
     // Anything I try to add to the <a> element gets overriden by another CSS file...
-    background-color: @godot_light_gray;
+    background-color: @base-color;
     border-radius: 0;
 }
 
@@ -447,7 +447,7 @@ ul.DataList.Activities
             padding-left: 4px;
             padding-right: 4px;
 
-            background-color: @godot_light_gray;
+            background-color: @base-color;
             border-radius: 0;
         }
     }
@@ -460,7 +460,7 @@ ul.DataList.Activities
             padding-left: 4px;
             padding-right: 4px;
 
-            background-color: @godot_light_gray;
+            background-color: @base-color;
             border-radius: 0;
         }
     }
@@ -497,7 +497,7 @@ form[id="Form_Comment"]
 {
     & div div.Buttons
     {
-        background-color: @godot_light_gray;
+        background-color: @base-color;
     }
 }
 
@@ -552,7 +552,7 @@ span.MItem.RoleTitle
     &[id="Godot Developer"]
     {
         background-color: #fff;
-        color: @godot_blue;
+        color: @primary-color-text;
     }
 }
 
@@ -620,7 +620,7 @@ div.Box.GuestBox
 // Change the background color of the items in the tag cloud
 ul.TagCloud li
 {
-    background-color: @godot_white;
+    background-color: white;
 }
 
 // Change the color of the close (cross) buttons
@@ -731,10 +731,10 @@ ul.DataList.Discussions, ul.DataList.Activities
         
         & div.Options
         {
-            color: @godot_white;
+            color: white;
             &:active, &:hover
             {
-                color: @godot_coral;
+                color: @accent-color;
             }
         }
     }
@@ -1013,5 +1013,20 @@ div[id="GodotEngine_Header"]
         }
     }
 }
+
+// Discord stuff
+.discord {
+	float:left;
+  height:70px;
+	width:350px;
+   
+	
+}
+.discord:hover {
+	height:500px;
+	width:350px;
+	float:left;
+}
+
 // *********************************************************
 
