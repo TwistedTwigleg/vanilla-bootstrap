@@ -85,9 +85,17 @@
 
     <section class="container">
       <div class="row">
-        
+          
 		<aside class="page-sidebar" role="complementary">
           {asset name="Panel"}
+          
+          <div class="Box Thirdparty-Embeds">
+              <h4>Godot Discord</h4>
+              <p><i><b>TODO:</b> replace with actual Godot Discord!</i></p>
+              <iframe class="discord" src="https://discordapp.com/widget?id=201798443583143936&theme=dark"></iframe>
+              <center><a href="https://discord.gg/PWdeHDW"><i>Discord from Old Godot forums</i></a></center>
+          </div>
+          
         </aside>
 		
 		<main class="page-content" role="main">
@@ -96,7 +104,7 @@
             <div class="well search-form">{searchbox}</div>
           {/if}
           {asset name="Content"}
-        </main>
+        </main> 
         
       </div>
     </section>
