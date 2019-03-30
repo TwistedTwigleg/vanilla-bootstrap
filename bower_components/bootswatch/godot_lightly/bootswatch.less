@@ -629,14 +629,49 @@ a.Close, a.Delete
     color: black;
 }
 
+main.page-content h1.H.HomepageTitle{
+  text-transform: uppercase;
+  font-weight: bold;
+  color: @base-color-text-title;
+}
+
 // Custom styling for the categories table
+div.CategoryGroup{
+  border-color: rgba(0, 0, 0, 0.2);
+  border-radius: 0;
+  transition: box-shadow .2s ease-in-out;
+
+  &:hover{
+    box-shadow: 0 0 12px rgba(0, 0, 0, .2), 0 0 2px rgba(0, 0, 0, .1);
+  }
+
+  & h2.H{
+    padding: 8px;
+    border: none;
+    background-color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: @base-color-text-title;
+  }
+}
+
+main.page-content > div.DataTableWrap{
+  border-color: rgba(0, 0, 0, 0.2);
+  transition: box-shadow .2s ease-in-out;
+
+  &:hover{
+    box-shadow: 0 0 12px rgba(0, 0, 0, .2), 0 0 2px rgba(0, 0, 0, .1);
+  }  
+}
+
 table.DataTable.CategoryTable
 {
-    // Each table row...
+  
+  // Each table row...
     & tbody tr
     {
-        border-bottom-width: 2px;
-        border-bottom-color: rgba(1, 1, 1, 0.2);
+        border-bottom-width: 1px;
+        border-bottom-color: rgba(0, 0, 0, 0.05);
         border-bottom-style: solid;
         
         // When the table row is active, make the text white
@@ -648,11 +683,13 @@ table.DataTable.CategoryTable
             & td div h3 a
             {
                 color: white;
+                text-transform: uppercase;
             }
             
             & td div h2 a
             {
                 color: white;
+                text-transform: uppercase;
             }
             
         }
@@ -662,6 +699,14 @@ table.DataTable.CategoryTable
         {
             font-weight: bold;
             text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        & td div h2 a
+        {
+            font-weight: bold;
+            text-decoration: none;
+            text-transform: uppercase;
         }
         
         // Make sure to mark the categories that are only for holding
