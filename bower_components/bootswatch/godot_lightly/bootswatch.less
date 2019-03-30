@@ -669,7 +669,11 @@ main.page-content > div.DataTableWrap{
 
 table.DataTable.CategoryTable
 {
-  
+  // Table heading
+    & thead tr td div.wrap{
+        text-transform: lowercase;
+    }
+
   // Each table row...
     & tbody tr
     {
@@ -683,6 +687,7 @@ table.DataTable.CategoryTable
             color: white;
             
             // For some reason the link (a) needs to be specifically overwritten.
+            // Yes, because of specificity - M.
             & td div h3 a
             {
                 color: white;
@@ -694,7 +699,7 @@ table.DataTable.CategoryTable
                 color: white;
                 text-transform: uppercase;
             }
-            
+
         }
         
         // Make the link (a) bold with no underscores
@@ -904,6 +909,14 @@ div[id="GodotEngine_Header"]
         transform: rotate(-135deg);
         -webkit-transform: rotate(-135deg);
     }
+}
+
+// The bottom left notification box that appears when you
+// select a topic or a category via checkbox for modification.
+div.InformMessages{
+  & #CheckSummary div.InformMessage{
+    border-radius: 0;
+  }
 }
 
 // Browser size related media queries!
