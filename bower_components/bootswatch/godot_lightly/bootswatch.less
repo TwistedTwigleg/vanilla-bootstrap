@@ -392,11 +392,28 @@ div.BoxFilter.BoxDiscussionFilter, div.BoxFilter.BoxActivityFilter, div.BoxFilte
 // The categories list
 div.Box.BoxCategories
 {
-    & ul.PanelInfo.PanelCategories li
+  & ul.PanelInfo.PanelCategories {
+    background-color: white;
+    border-radius: 0;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0px rgba(0, 0, 0, .1);
+    transition: box-shadow .2s ease-in-out;
+
+    &:hover{
+      box-shadow: 0 0 12px rgba(0, 0, 0, .2), 0 0 2px rgba(0, 0, 0, .1);
+    }
+
+    & li:first-child
+    {
+        // Remove top border from first element
+        border-top-width: 0;
+    }
+
+    & li
     {
         // Not sure on this, might look better without...
         border-top-width: 2px;
-        border-top-color: rgba(1, 1, 1, 0.2);
+        border-top-color: rgba(1, 1, 1, 0.05);
         border-top-style: solid;
     }
     
@@ -407,6 +424,7 @@ div.Box.BoxCategories
         color: white;
         font-weight: bold;
     }
+  }
 }
 
 // Make the light gray link text a different color when the mouse is scrolled over it.
