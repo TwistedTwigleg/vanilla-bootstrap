@@ -87,8 +87,6 @@
       <div class="row">
           
         <aside class="page-sidebar" role="complementary">
-            <!--{asset name="Panel"}-->
-
             {if InSection(array("CategoryList", "CategoryDiscussionList", "DiscussionList", "Discussion"))}
                 {module name="NewDiscussionModule"}
                 {module name="DiscussionFilterModule"}
