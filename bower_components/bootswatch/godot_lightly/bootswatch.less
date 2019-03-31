@@ -338,6 +338,11 @@ a.list-group-item {
   background-color: @panel-footer-bg;
 }
 
+// emojis
+// the new ones are awfully small by default
+span.safeEmoji.nativeEmoji {
+  font-size: 21px;
+}
 
 // =================================================================
 // ****** ADDATIONAL CSS/LESS ******
@@ -660,7 +665,8 @@ a.Close, a.Delete
     color: black;
 }
 
-main.page-content h1.H.HomepageTitle{
+main.page-content h1.H.HomepageTitle, main.page-content h1.H
+{
   text-transform: uppercase;
   font-weight: bold;
   color: @base-color-text-title;
