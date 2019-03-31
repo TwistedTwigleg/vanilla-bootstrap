@@ -89,7 +89,7 @@
         <aside class="page-sidebar" role="complementary">
             <!--{asset name="Panel"}-->
 
-            {if InSection(array("CategoryList", "CategoryDiscussionList", "DiscussionList"))}
+            {if InSection(array("CategoryList", "CategoryDiscussionList", "DiscussionList", "Discussion"))}
                 {module name="NewDiscussionModule"}
                 {module name="DiscussionFilterModule"}
             {/if}
@@ -98,7 +98,7 @@
                 {module name="ActivityFilterModule"}
             {/if}
 
-            {if InSection(array("CategoryDiscussionList", "DiscussionList"))}
+            {if InSection(array("CategoryDiscussionList", "DiscussionList", "Discussion"))}
                 <button type="button" class="sidebar-toggle" data-toggle="collapse" data-target=".sidebar-categories-collapse">
                     <img src="{"/themes/bootstrap/images/hamburger_alt.svg"|asset_url:true:false}" alt="menu" id="alt">
                     Categories
