@@ -385,6 +385,8 @@ div.BoxFilter.BoxDiscussionFilter, div.BoxFilter.BoxActivityFilter, div.BoxFilte
 {
     
     margin-top: 18px;
+    margin-bottom: 8px;
+    
     background-color: white;
     border-radius: 0;
     border: 1px solid rgba(0, 0, 0, 0.2);
@@ -418,6 +420,19 @@ div.BoxFilter.BoxDiscussionFilter, div.BoxFilter.BoxActivityFilter, div.BoxFilte
                 color: white;
             }
         }
+    }
+}
+
+// The categories panel
+ul.PanelInfo.PanelCategories
+{
+    border-radius: 0;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0px rgba(0, 0, 0, .1);
+    transition: box-shadow .2s ease-in-out;
+
+    &:hover{
+      box-shadow: 0 0 12px rgba(0, 0, 0, .2), 0 0 2px rgba(0, 0, 0, .1);
     }
 }
 
@@ -684,6 +699,15 @@ div.Box.GuestBox
 ul.TagCloud li
 {
     background-color: white;
+    
+    border-radius: 0;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0px rgba(0, 0, 0, .1);
+    transition: box-shadow .2s ease-in-out;
+
+    &:hover{
+      box-shadow: 0 0 12px rgba(0, 0, 0, .2), 0 0 2px rgba(0, 0, 0, .1);
+    }
 }
 
 // Change the color of the close (cross) buttons
@@ -992,6 +1016,28 @@ div.InformMessages{
   }
 }
 
+// CSS for the button that expands and collapses the side menu
+button.sidebar-toggle
+{
+    background-color: @dark-color;
+    color: white;
+    vertical-align: middle;
+    
+    width: 100%;
+    height: 42px;
+    
+    padding-top: 4px;
+    padding-bottom: 4px;
+    
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0px rgba(0, 0, 0, .1);
+    transition: box-shadow .2s ease-in-out;
+
+    &:hover{
+        box-shadow: 0 0 12px rgba(0, 0, 0, .2), 0 0 2px rgba(0, 0, 0, .1);
+    }
+}
+
 // Browser size related media queries!
 // *********************************************************
 // If the size of the window is MORE than 1000px...
@@ -1102,48 +1148,6 @@ div.InformMessages{
         }
     }
 }
-
-// ***************
-// Discord stuff
-div.Box.Thirdparty-Embeds > iframe.discord
-{
-	float:left;
-  height:70px;
-  width:100%;
-  border: 0;
-  border-color: transparent;
-
-  &:hover
-  {
-    height:320px;
-    width:100%;
-    float:left;
-    border: 0;
-    border-color: transparent;
-  }
-}
-// (Code taken from https://css-tricks.com/touch-devices-not-judged-size/)
-// If the input device can hover, then only expand the discord widget when hovering.
-@media (hover: hover)
-{
-  div.Box.Thirdparty-Embeds > iframe.discord:hover
-  {
-    height:320px;
-    width:100%;
-    float:left;
-    border: 0;
-    border-color: transparent;
-  }
-}
-// If the input device cannot hover, then auto expand the discord widget.
-@media (hover: none)
-{
-  div.Box.Thirdparty-Embeds > iframe.discord
-  {
-    height:320px;
-  }
-}
-// ***************
 
 // *********************************************************
 
