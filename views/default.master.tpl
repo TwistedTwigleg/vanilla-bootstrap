@@ -85,17 +85,8 @@
 
     <section class="container">
       <div class="row">
-          
-		    <aside class="page-sidebar" role="complementary">
+        <aside class="page-sidebar" role="complementary">
             {asset name="Panel"}
-
-            <div class="Box Thirdparty-Embeds">
-                <div style="padding-top: 18px"></div>
-                <iframe class="discord" src="https://discordapp.com/widget?id=212250894228652034&theme=dark"></iframe>
-                <center><a href="https://discord.gg/PWdeHDW"><i>Alternative Discord from old forums</i></a></center>
-                <div style="padding-bottom: 18px"></div>
-            </div>
-          
         </aside>
 		
 		    <main class="page-content" role="main">

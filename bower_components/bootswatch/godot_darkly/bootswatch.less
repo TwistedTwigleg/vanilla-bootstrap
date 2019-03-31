@@ -885,37 +885,4 @@ div[id="GodotEngine_Header"]
     }
 }
 
-// ***************
-// Discord stuff
-.discord
-{
-	float:left;
-    height:70px;
-    width:100%;
-    border: 0;
-    border-color: transparent;
-}
-// (Code taken from https://css-tricks.com/touch-devices-not-judged-size/)
-// If the input device can hover, then only expand the discord widget when hovering.
-@media (hover: hover)
-{
-    .discord:hover
-    {
-        height:320px;
-        width:100%;
-        float:left;
-        border: 0;
-        border-color: transparent;
-    }
-}
-// If the input device cannot hover, then auto expand the discord widget.
-@media (hover: none)
-{
-    .discord
-    {
-        height:320px;
-    }
-}
-// ***************
-
 // *********************************************************
