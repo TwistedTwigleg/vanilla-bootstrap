@@ -351,15 +351,28 @@ a.list-group-item {
 // when looking at a profile.
 div.BoxFilter.BoxDiscussionFilter, div.BoxFilter.BoxActivityFilter, div.BoxFilter.BoxProfileFilter
 {
+    
+    margin-top: 18px;
     background-color: white;
     border-radius: 0;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0px rgba(0, 0, 0, .1);
+    transition: box-shadow .2s ease-in-out;
+
+    &:hover{
+      box-shadow: 0 0 12px rgba(0, 0, 0, .2), 0 0 2px rgba(0, 0, 0, .1);
+    }
     
+    & ul.FilterMenu{
+      padding: 0;
+    }
+
     // Change the text links so they are colored properly.
     & li
     {
         // Not sure on this, might look better without...
-        border-top-width: 2px;
-        border-top-color: rgba(1, 1, 1, 0.2);
+        border-top-width: 1px;
+        border-top-color: rgba(1, 1, 1, 0.05);
         border-top-style: solid;
         border-radius: 0;
         
