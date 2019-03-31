@@ -87,14 +87,13 @@
       <div class="row">
           
 		<aside class="page-sidebar" role="complementary">
-          {asset name="Panel"}
-          
-          <div class="Box Thirdparty-Embeds">
-              <h4>Godot Discord</h4>
-              <p><i><b>TODO:</b> replace with actual Godot Discord!</i></p>
-              <iframe class="discord" src="https://discordapp.com/widget?id=201798443583143936&theme=dark"></iframe>
-              <center><a href="https://discord.gg/PWdeHDW"><i>Discord from Old Godot forums</i></a></center>
-          </div>
+            <div class="Box Thirdparty-Embeds">
+                <iframe class="discord" src="https://discordapp.com/widget?id=212250894228652034&theme=dark"></iframe>
+                <center><a href="https://discord.gg/PWdeHDW"><i>Discord from old Godot Developers forums</i></a></center>
+                <div style="padding-bottom: 18px"></div>
+            </div>
+            
+            {asset name="Panel"}
           
         </aside>
 		
