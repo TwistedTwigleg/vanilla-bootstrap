@@ -344,6 +344,33 @@ span.safeEmoji.nativeEmoji {
   font-size: 21px;
 }
 
+// Popup
+#Popup {
+  & div.Border
+  {
+    background-color: white;
+    border-radius: 0;
+
+    & div.Content {
+      & h1 {
+        border: none;
+        color: @accent-color;
+        text-transform: uppercase;
+        font-weight: bold;
+      }
+
+      & p {
+        font-style: italic;
+        font-weight: 500;
+      }
+    }
+
+    & div.Buttons.Footer {
+      border: none;
+    }
+  }
+}
+
 // =================================================================
 // ****** ADDATIONAL CSS/LESS ******
 // NOTE: Many of these are temporary work arounds
