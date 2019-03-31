@@ -774,6 +774,30 @@ div[id="GodotEngine_Header"]
     }
 }
 
+// CSS for the button that expands and collapses the side menu
+button.sidebar-toggle
+{
+    background-color: @brand-primary;
+    color: white;
+    vertical-align: middle;
+    
+    width: 100%;
+    height: 42px;
+    
+    padding-top: 4px;
+    padding-bottom: 4px;
+    
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0px rgba(0, 0, 0, .1);
+    transition: box-shadow .2s ease-in-out;
+    
+    border-radius: 6px;
+
+    &:hover{
+        box-shadow: 0 0 12px rgba(0, 0, 0, .2), 0 0 2px rgba(0, 0, 0, .1);
+    }
+}
+
 
 // Browser size related media queries!
 // *********************************************************

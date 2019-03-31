@@ -55,7 +55,7 @@
           </button>
           <a class="navbar-brand" href="{link path="home"}">{logo}</a>
         </div>
-
+          
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             {categories_link}
@@ -85,11 +85,41 @@
 
     <section class="container">
       <div class="row">
+          
         <aside class="page-sidebar" role="complementary">
-            {asset name="Panel"}
+            <!--{asset name="Panel"}-->
+
+            {if InSection(array("CategoryList", "CategoryDiscussionList", "DiscussionList"))}
+                {module name="NewDiscussionModule"}
+                {module name="DiscussionFilterModule"}
+            {/if}
+
+            {if InSection(array("ActivityList"))}
+                {module name="ActivityFilterModule"}
+            {/if}
+
+            {if InSection(array("CategoryDiscussionList", "DiscussionList"))}
+                <button type="button" class="sidebar-toggle" data-toggle="collapse" data-target=".sidebar-categories-collapse">
+                    <img src="{"/themes/bootstrap/images/hamburger_alt.svg"|asset_url:true:false}" alt="menu" id="alt">
+                    Categories
+                </button>
+                <div class="sidebar-categories-collapse collapse">
+                    {module name="CategoriesModule"}
+                </div>
+            {/if}
+
+            {if InSection(array("CategoryList", "CategoryDiscussionList", "DiscussionList"))}
+                <button type="button" class="sidebar-toggle" data-toggle="collapse" data-target=".sidebar-tags-collapse">
+                    <img src="{"/themes/bootstrap/images/hamburger_alt.svg"|asset_url:true:false}" alt="menu" id="alt">
+                    Tags
+                </button>
+                <div class="sidebar-tags-collapse collapse">
+                    {module name="TagModule"}
+                </div>
+            {/if}
         </aside>
 		
-		    <main class="page-content" role="main">
+        <main class="page-content" role="main">
           {breadcrumbs}
           {if InSection(array("CategoryList", "CategoryDiscussionList", "DiscussionList"))}
             <div class="well search-form">{searchbox}</div>
