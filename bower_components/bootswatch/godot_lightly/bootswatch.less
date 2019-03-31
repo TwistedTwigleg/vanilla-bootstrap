@@ -377,6 +377,33 @@ span.safeEmoji.nativeEmoji {
 // that ideally should be replaced (if possible) by CSS/LESS
 // in variables.less!
 
+aside.page-sidebar > div.BoxButtons.BoxNewDiscussion
+{
+  & > div.ButtonGroup
+  {
+    width: 100%;
+    align-content: center;
+
+    & > a.Button.Primary
+    {
+      min-width: 84%;
+      max-width: 84%;
+    }
+
+    & > a.Button.Primary.Handle
+    {
+      min-width: 16%;
+      max-width: 16%;
+    }
+
+    & > ul.Dropdown.MenuItems
+    {
+      width: 100%;
+      border-radius: 0;
+    }
+  }
+}
+
 // The box just below new discussion, that contains categories, activity, etc.
 //
 // This box is visible when viewing Categories, when in the activity page, and
