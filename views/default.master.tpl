@@ -85,9 +85,16 @@
 
     <section class="container">
       <div class="row">
-        
+          
 		<aside class="page-sidebar" role="complementary">
-          {asset name="Panel"}
+            <div class="Box Thirdparty-Embeds">
+                <iframe class="discord" src="https://discordapp.com/widget?id=212250894228652034&theme=dark"></iframe>
+                <center><a href="https://discord.gg/PWdeHDW"><i>Discord from old Godot Developers forums</i></a></center>
+                <div style="padding-bottom: 18px"></div>
+            </div>
+            
+            {asset name="Panel"}
+          
         </aside>
 		
 		<main class="page-content" role="main">
@@ -96,7 +103,7 @@
             <div class="well search-form">{searchbox}</div>
           {/if}
           {asset name="Content"}
-        </main>
+        </main> 
         
       </div>
     </section>
