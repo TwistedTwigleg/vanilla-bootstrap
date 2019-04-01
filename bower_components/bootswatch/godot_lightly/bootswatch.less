@@ -445,7 +445,13 @@ div.BoxFilter.BoxDiscussionFilter, div.BoxFilter.BoxActivityFilter, div.BoxFilte
             &:hover, &:active
             {
                 color: white;
+
+                & span.Count
+                {
+                  color: @primary-color-text;
+                }
             }
+            
         }
     }
 }
@@ -499,6 +505,13 @@ div.Box.BoxCategories
         font-weight: bold;
     }
   }
+}
+
+// Span "Count" that appears for an examle at the end of categories in the sidepanel or tags, etc.
+section.container span.Count
+{
+  background-color: inherit;
+  color: @base-color-text;
 }
 
 // Make the light gray link text a different color when the mouse is scrolled over it.
@@ -605,6 +618,10 @@ form[id="Form_Comment"]
         background-color: @base-color;
     }
 }
+
+// MessageForm for message editing.
+// div.MessageForm.CommentForm. - will leave unfixed for now so users can see what to identify as issue.
+
 // Make the box with the buttons when editing a comment/post white instead of dark blue.
 div.MessageForm.EditCommentForm
 {
