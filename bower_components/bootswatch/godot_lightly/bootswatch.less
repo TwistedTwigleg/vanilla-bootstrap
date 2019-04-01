@@ -467,6 +467,20 @@ ul.PanelInfo.PanelCategories
     &:hover{
       box-shadow: 0 0 12px rgba(0, 0, 0, .2), 0 0 2px rgba(0, 0, 0, .1);
     }
+
+    & li
+    {
+      & a
+      {
+        &:hover
+        {
+          & span.Number
+          {
+            color: @primary-color-text;
+          }
+        }
+      }
+    }
 }
 
 // The categories list
@@ -501,17 +515,23 @@ div.Box.BoxCategories
     & li.ClearFix.Heading
     {
         background-color: @primary-color;
-        color: white;
+        color: @primary-color-text-hl;
         font-weight: bold;
+
+        & span.Number{
+          color: @primary-color-text-hl;
+        }
     }
   }
 }
 
 // Span "Count" that appears for an examle at the end of categories in the sidepanel or tags, etc.
-section.container span.Count
+section.container
 {
-  background-color: inherit;
-  color: @base-color-text;
+  & span.Count, & span.Number{
+    background-color: inherit;
+    color: @base-color-text;
+  }
 }
 
 // Make the light gray link text a different color when the mouse is scrolled over it.
