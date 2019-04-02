@@ -98,7 +98,6 @@
 
             {if InSection(array("CategoryDiscussionList", "DiscussionList", "Discussion"))}
                 <button type="button" class="sidebar-toggle" data-toggle="collapse" data-target=".sidebar-categories-collapse">
-                    <img src="{"/themes/bootstrap/images/hamburger_alt.svg"|asset_url:true:false}" alt="menu" id="alt">
                     Categories
                 </button>
                 <div class="sidebar-categories-collapse collapse">
@@ -108,7 +107,6 @@
 
             {if InSection(array("CategoryList", "CategoryDiscussionList", "DiscussionList"))}
                 <button type="button" class="sidebar-toggle" data-toggle="collapse" data-target=".sidebar-tags-collapse">
-                    <img src="{"/themes/bootstrap/images/hamburger_alt.svg"|asset_url:true:false}" alt="menu" id="alt">
                     Tags
                 </button>
                 <div class="sidebar-tags-collapse collapse">
