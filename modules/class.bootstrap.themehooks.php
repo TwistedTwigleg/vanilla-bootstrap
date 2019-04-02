@@ -9,5 +9,12 @@ class bootstrapThemeHooks extends Gdn_Plugin {
 
         $sender->addJsFile('themeFunctions.js');
     }
+    
+    
+    // When in the discussions view...
+    public function discussionsController_render_before($sender, $args)
+    {
+        $sender->addJsFile('themeFunctionsDiscussions.js');
+    }
 
 }
