@@ -14,5 +14,4 @@ class bootstrapThemeHooks extends Gdn_Plugin {
 
         $sender->addJsFile('themeFunctions.js');
     }
-
 }

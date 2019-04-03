@@ -113,6 +113,12 @@
                     {module name="TagModule"}
                 </div>
             {/if}
+			
+			
+			{if InSection(array("CategoryList", "CategoryDiscussionList", "DiscussionList", "Discussion"))}
+                {pocket name="Discord Embed Pocket"}
+            {/if}
+			
         </aside>
 		
         <main class="page-content" role="main">
