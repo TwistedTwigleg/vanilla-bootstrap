@@ -114,7 +114,10 @@
                 </div>
             {/if}
 			
-			{pocket name="Discord Embed Pocket"}
+			
+			{if InSection(array("CategoryList", "CategoryDiscussionList", "DiscussionList", "Discussion"))}
+                {pocket name="Discord Embed Pocket"}
+            {/if}
 			
         </aside>
 		
