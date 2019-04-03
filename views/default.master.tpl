@@ -113,6 +113,9 @@
                     {module name="TagModule"}
                 </div>
             {/if}
+			
+			{pocket name="Discord Embed Pocket"}
+			
         </aside>
 		
         <main class="page-content" role="main">
