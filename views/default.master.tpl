@@ -89,6 +89,9 @@
         <aside class="page-sidebar" role="complementary">
             {if InSection(array("CategoryList", "CategoryDiscussionList", "DiscussionList", "Discussion"))}
                 {module name="NewDiscussionModule"}
+            {/if}
+            
+            {if InSection(array("CategoryList", "CategoryDiscussionList", "DiscussionList", "Discussion", "Profile", "Conversations"))}
                 {module name="DiscussionFilterModule"}
             {/if}
 
@@ -96,7 +99,7 @@
                 {module name="ActivityFilterModule"}
             {/if}
 
-            {if InSection(array("CategoryDiscussionList", "DiscussionList", "Discussion"))}
+            {if InSection(array("CategoryDiscussionList", "DiscussionList", "Discussion", "Profile", "Conversations"))}
                 <button type="button" class="sidebar-toggle" data-toggle="collapse" data-target=".sidebar-categories-collapse">
                     Categories
                 </button>
@@ -105,7 +108,7 @@
                 </div>
             {/if}
 
-            {if InSection(array("CategoryList", "CategoryDiscussionList", "DiscussionList"))}
+            {if InSection(array("CategoryList", "CategoryDiscussionList", "DiscussionList", "Profile", "Conversations"))}
                 <button type="button" class="sidebar-toggle" data-toggle="collapse" data-target=".sidebar-tags-collapse">
                     Tags
                 </button>
@@ -115,7 +118,7 @@
             {/if}
 			
 			
-			{if InSection(array("CategoryList", "CategoryDiscussionList", "DiscussionList", "Discussion"))}
+			{if InSection(array("CategoryList", "CategoryDiscussionList", "DiscussionList", "Discussion", "Profile", "Conversations"))}
                 {pocket name="Discord Embed Pocket"}
             {/if}
 			
