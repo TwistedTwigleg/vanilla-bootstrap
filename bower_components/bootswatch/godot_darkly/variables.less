@@ -15,11 +15,37 @@
 @gray-lighter:           #EBEBEB; // #eee
 
 @brand-primary:         #375a7f;
-@brand-success:         #78abe2;  //#00bc8c;
+@brand-success:         #78abe2;
 @brand-info:            #3498DB;
 @brand-warning:         #F39C12;
 @brand-danger:          #E74C3C;
 
+
+// variables with the same names as those from godotengine.org
+// (Allows us to use the same CSS in both Godot themes with minimal edits)
+@transparent-cover: rgb(51, 63, 103, 0.4);
+@transparent-cover-darker: rgba(51, 63, 103, 0.9);
+
+@base-color: @gray; //#eff1f5;
+@base-color-text: @gray-light; //#4a5365;
+@base-color-text-hl: white; //#454b59;
+@base-color-text-title: @gray-light; //#546b99;
+@base-color-text-subtitle: @gray-lighter; //#8a9cc2;
+
+@dark-color: #375a7f; //#333f67;
+@dark-color-text: lightsteelblue;
+@dark-color-text-hl: #99b3d4; //#d4e3f6;
+@dark-color-text-title: white;
+
+@primary-color: #4a7baf; //#3d8fcc;
+@primary-color-text: #d4edff;
+@primary-color-text-hl: white;
+@primary-color-text-title: white;
+
+@base-shadow: 0 0 4px rgba(0, 0, 0, .2);
+@more-shadow: 0 2px 10px rgba(0, 0, 0, .2);
+
+@accent-color: #f57389;
 
 //== Scaffolding
 //
@@ -31,9 +57,9 @@
 @text-color:            #fff;
 
 //** Global textual link color.
-@link-color:            desaturate(lighten(@brand-success, 10%),10%);
+@link-color:            @accent-color; //desaturate(lighten(@brand-success, 10%),10%);
 //** Link hover color set via `darken()` function.
-@link-hover-color:      @link-color;
+@link-hover-color:      @accent-color;
 //** Link hover decoration.
 @link-hover-decoration: underline;
 
@@ -109,7 +135,7 @@
 //** Global color for active items (e.g., navs or dropdowns).
 @component-active-color:    #fff;
 //** Global background color for active items (e.g., navs or dropdowns).
-@component-active-bg:       @brand-success;
+@component-active-bg:       @primary-color;
 
 //** Width of the `border` for generating carets that indicator dropdowns.
 @caret-width-base:          4px;
@@ -131,7 +157,7 @@
 //** Background color used for `.table-striped`.
 @table-bg-accent:               @gray-dark;
 //** Background color used for `.table-hover`.
-@table-bg-hover:                @gray;
+@table-bg-hover:                @primary-color;
 @table-bg-active:               @table-bg-hover;
 
 //** Border color for table and cell borders.
@@ -144,12 +170,12 @@
 
 @btn-font-weight:                normal;
 
-@btn-default-color:              @text-color;
-@btn-default-bg:                 @gray;
+@btn-default-color:              #fff;
+@btn-default-bg:                 @dark-color;
 @btn-default-border:             @btn-default-bg;
 
 @btn-primary-color:              #fff;
-@btn-primary-bg:                 @brand-primary;
+@btn-primary-bg:                 @dark-color;
 @btn-primary-border:             @btn-primary-bg;
 
 @btn-success-color:              @btn-primary-color;
@@ -223,7 +249,7 @@
 //## Dropdown menu container and contents.
 
 //** Background for the dropdown menu.
-@dropdown-bg:                    #fff;
+@dropdown-bg:                    @gray-dark; //#fff;
 //** Dropdown menu `border-color`.
 @dropdown-border:                rgba(0,0,0,.15);
 //** Dropdown menu `border-color` **for IE8**.
@@ -232,14 +258,14 @@
 @dropdown-divider-bg:            #e5e5e5;
 
 //** Dropdown link text color.
-@dropdown-link-color:            @brand-primary;
+@dropdown-link-color:            white; //@brand-primary;
 //** Hover color for dropdown links.
 @dropdown-link-hover-color:      #fff;
 //** Hover background for dropdown links.
 @dropdown-link-hover-bg:         @component-active-bg;
 
 //** Active dropdown menu item text color.
-@dropdown-link-active-color:     #fff;
+@dropdown-link-active-color:     @accent-color;
 //** Active dropdown menu item background color.
 @dropdown-link-active-bg:        @component-active-bg;
 
@@ -355,12 +381,12 @@
 @navbar-collapse-max-height:       340px;
 
 @navbar-default-color:             #777;
-@navbar-default-bg:                @brand-primary;
+@navbar-default-bg:                @primary-color; //@brand-primary;
 @navbar-default-border:            transparent;
 
 // Navbar links
 @navbar-default-link-color:                #fff;
-@navbar-default-link-hover-color:          @brand-success;
+@navbar-default-link-hover-color:          @accent-color;
 @navbar-default-link-hover-bg:             transparent;
 @navbar-default-link-active-color:         #fff;
 @navbar-default-link-active-bg:            darken(@navbar-default-bg, 10%);
@@ -410,7 +436,7 @@
 
 //=== Shared nav styles
 @nav-link-padding:                          10px 15px;
-@nav-link-hover-bg:                         @gray-dark;
+@nav-link-hover-bg:                         @primary-color;
 
 @nav-disabled-link-color:                   lighten(@gray, 10%);
 @nav-disabled-link-hover-color:             lighten(@gray, 10%);
@@ -438,19 +464,19 @@
 //##
 
 @pagination-color:                     #fff;
-@pagination-bg:                        @brand-success;
+@pagination-bg:                        @dark-color;
 @pagination-border:                    transparent;
 
-@pagination-hover-color:               #fff;
-@pagination-hover-bg:                  lighten(@brand-success, 6%);
+@pagination-hover-color:               @accent-color;
+@pagination-hover-bg:                  lighten(@pagination-bg, 6%);
 @pagination-hover-border:              transparent;
 
 @pagination-active-color:              #fff;
-@pagination-active-bg:                 lighten(@brand-success, 6%);
+@pagination-active-bg:                 lighten(@pagination-bg, 6%);
 @pagination-active-border:             transparent;
 
 @pagination-disabled-color:            #fff;
-@pagination-disabled-bg:               darken(@brand-success, 15%);;
+@pagination-disabled-bg:               darken(@pagination-bg, 15%);
 @pagination-disabled-border:           transparent;
 
 
@@ -486,8 +512,8 @@
 //## Define colors for form feedback states and, by default, alerts.
 
 @state-success-text:             #fff;
-@state-success-bg:               @brand-success;
-@state-success-border:           @brand-success;
+@state-success-bg:               @dark-color;
+@state-success-border:           @dark-color;
 
 @state-info-text:                #fff;
 @state-info-bg:                  @brand-info;
@@ -660,12 +686,12 @@
 //** Background color on `.list-group-item`
 @list-group-bg:                 @gray-dark;
 //** `.list-group-item` border color
-@list-group-border:             @gray;
+@list-group-border:             transparent; //@gray;
 //** List group border radius
-@list-group-border-radius:      @border-radius-base;
+@list-group-border-radius:      0;
 
 //** Background color of single list items on hover
-@list-group-hover-bg:          transparent;
+@list-group-hover-bg:           @primary-color;
 //** Text color of active list items
 @list-group-active-color:       @component-active-color;
 //** Background color of active list items
@@ -673,7 +699,7 @@
 //** Border color of active list elements
 @list-group-active-border:      @list-group-active-bg;
 //** Text color for content within active list items
-@list-group-active-text-color:  lighten(@list-group-active-bg, 40%);
+@list-group-active-text-color:  #fff; //lighten(@list-group-active-bg, 40%);
 
 //** Text color of disabled list items
 @list-group-disabled-color:      @gray-light;
@@ -682,8 +708,8 @@
 //** Text color for content within disabled list items
 @list-group-disabled-text-color: @list-group-disabled-color;
 
-@list-group-link-color:         @link-color;
-@list-group-link-hover-color:   @list-group-link-color;
+@list-group-link-color:         #000; //@link-color;
+@list-group-link-hover-color:   #fff; //@list-group-link-color;
 @list-group-link-heading-color: darken(@link-color, 5%);
 
 
@@ -698,14 +724,14 @@
 @panel-border-radius:         @border-radius-base;
 
 //** Border color for elements within panels
-@panel-inner-border:          @gray;
-@panel-footer-bg:             @gray;
+@panel-inner-border:          @gray; //@dark-color;
+@panel-footer-bg:             @gray; //@dark-color;
 
-@panel-default-text:          @text-color;
-@panel-default-border:        @gray;
-@panel-default-heading-bg:    @gray-dark;
+@panel-default-text:          #000;
+@panel-default-border:        @gray; //@dark-color;
+@panel-default-heading-bg:    @gray; //@dark-color;
 
-@panel-primary-text:          #fff;
+@panel-primary-text:          #000;
 @panel-primary-border:        @brand-primary;
 @panel-primary-heading-bg:    @brand-primary;
 
@@ -749,23 +775,23 @@
 //
 //##
 
-@well-bg:                     @gray-dark;
-@well-border:                 transparent;
+@well-bg:                     @gray-darker;
+@well-border:                 @gray-dark;
 
 
 //== Badges
 //
 //##
 
-@badge-color:                 #fff;
+@badge-color:                 white;
 //** Linked badge text color on hover
 @badge-link-hover-color:      #fff;
-@badge-bg:                    @gray;
+@badge-bg:                    @dark-color;
 
 //** Badge text color in active nav link
-@badge-active-color:          @brand-primary;
+@badge-active-color:          @primary-color-text;
 //** Badge background color in active nav link
-@badge-active-bg:             #fff;
+@badge-active-bg:             @dark-color;
 
 @badge-font-weight:           bold;
 @badge-line-height:           1;
@@ -779,11 +805,11 @@
 @breadcrumb-padding-vertical:   8px;
 @breadcrumb-padding-horizontal: 15px;
 //** Breadcrumb background color
-@breadcrumb-bg:                 @gray;
+@breadcrumb-bg:                 @primary-color;
 //** Breadcrumb text color
-@breadcrumb-color:              @text-color;
+@breadcrumb-color:              #fff;
 //** Text color of current page in the breadcrumb
-@breadcrumb-active-color:       @gray-light;
+@breadcrumb-active-color:       #fff;
 //** Textual separator for between breadcrumb elements
 @breadcrumb-separator:          "/";
 
