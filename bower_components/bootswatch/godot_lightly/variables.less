@@ -20,31 +20,46 @@
 @brand-warning:         #F39C12;
 @brand-danger:          #E74C3C;
 
-@godot_blue:            #3d8fcc;
-@godot_dark_blue:       #333f67;
-
-@godot_white:           #ffffff;
-@godot_light_gray:      #eff1f5;
 @godot_gray:            #e1e3e6;
 
-@godot_light_blue:      #6ab6ef;
+// variables from godotengine.org
+@transparent-cover: rgb(51, 63, 103, 0.4);
+@transparent-cover-darker: rgba(51, 63, 103, 0.9);
 
-@godot_coral:            #f57389;
+@base-color: #eff1f5;
+@base-color-text: #4a5365;
+@base-color-text-hl: #454b59;
+@base-color-text-title: #546b99;
+@base-color-text-subtitle: #8a9cc2;
 
+@dark-color: #333f67;
+@dark-color-text: lightsteelblue;
+@dark-color-text-hl: #d4e3f6;
+@dark-color-text-title: white;
+
+@primary-color: #3d8fcc;
+@primary-color-text: #d4edff;
+@primary-color-text-hl: white;
+@primary-color-text-title: white;
+
+@base-shadow: 0 0 4px rgba(0, 0, 0, .2);
+@more-shadow: 0 2px 10px rgba(0, 0, 0, .2);
+
+@accent-color: #f57389;
 
 //== Scaffolding
 //
 //## Settings for some of the most global styles.
 
 //** Background color for `<body>`.
-@body-bg:               @godot_light_gray;
+@body-bg:               @base-color;
 //** Global text color on `<body>`.
 @text-color:            #000;
 
 //** Global textual link color.
-@link-color:            @godot_coral; //@godot_blue;
+@link-color:            @accent-color;
 //** Link hover color.
-@link-hover-color:      @godot_coral;
+@link-hover-color:      @accent-color;
 //** Link hover decoration.
 @link-hover-decoration: underline;
 
@@ -120,7 +135,7 @@
 //** Global color for active items (e.g., navs or dropdowns).
 @component-active-color:    #000;
 //** Global background color for active items (e.g., navs or dropdowns).
-@component-active-bg:       @godot_light_blue;//@brand-success;
+@component-active-bg:       @primary-color-text;
 
 //** Width of the `border` for generating carets that indicator dropdowns.
 @caret-width-base:          4px;
@@ -138,11 +153,11 @@
 @table-condensed-cell-padding:  5px;
 
 //** Default background color used for all tables.
-@table-bg:                      @godot_white;
+@table-bg:                      white;
 //** Background color used for `.table-striped`.
 @table-bg-accent:               @gray-dark;
 //** Background color used for `.table-hover`.
-@table-bg-hover:                @godot_blue;
+@table-bg-hover:                @primary-color;
 @table-bg-active:               @table-bg-hover;
 
 //** Border color for table and cell borders.
@@ -156,11 +171,11 @@
 @btn-font-weight:                normal;
 
 @btn-default-color:              #fff;
-@btn-default-bg:                 @godot_dark_blue;
+@btn-default-bg:                 @dark-color;
 @btn-default-border:             @btn-default-bg;
 
 @btn-primary-color:              #fff;
-@btn-primary-bg:                 @godot_dark_blue;
+@btn-primary-bg:                 @dark-color;
 @btn-primary-border:             @btn-primary-bg;
 
 @btn-success-color:              @btn-primary-color;
@@ -234,7 +249,7 @@
 //## Dropdown menu container and contents.
 
 //** Background for the dropdown menu.
-@dropdown-bg:                    @godot_white;
+@dropdown-bg:                    white;
 //** Dropdown menu `border-color`.
 @dropdown-border:                rgba(0,0,0,.15);
 //** Dropdown menu `border-color` **for IE8**.
@@ -250,7 +265,7 @@
 @dropdown-link-hover-bg:         @component-active-bg;
 
 //** Active dropdown menu item text color.
-@dropdown-link-active-color:     @godot_coral; //#fff;
+@dropdown-link-active-color:     @accent-color;
 //** Active dropdown menu item background color.
 @dropdown-link-active-bg:        @component-active-bg;
 
@@ -366,12 +381,12 @@
 @navbar-collapse-max-height:       340px;
 
 @navbar-default-color:             #fff; //#777;
-@navbar-default-bg:                @godot_blue;
+@navbar-default-bg:                @primary-color;
 @navbar-default-border:            transparent;
 
 // Navbar links
 @navbar-default-link-color:                #fff;
-@navbar-default-link-hover-color:          @godot_coral;
+@navbar-default-link-hover-color:          @accent-color;
 @navbar-default-link-hover-bg:             transparent;
 @navbar-default-link-active-color:         #fff;
 @navbar-default-link-active-bg:            darken(@navbar-default-bg, 10%);
@@ -421,7 +436,7 @@
 
 //=== Shared nav styles
 @nav-link-padding:                          10px 15px;
-@nav-link-hover-bg:                         @godot_blue;
+@nav-link-hover-bg:                         @primary-color;
 
 @nav-disabled-link-color:                   lighten(@gray, 10%);
 @nav-disabled-link-hover-color:             lighten(@gray, 10%);
@@ -449,10 +464,10 @@
 //##
 
 @pagination-color:                     #fff;
-@pagination-bg:                        @godot_dark_blue;
+@pagination-bg:                        @dark-color;
 @pagination-border:                    transparent;
 
-@pagination-hover-color:               @godot_coral; //#fff;
+@pagination-hover-color:               @accent-color;
 @pagination-hover-bg:                  lighten(@pagination-bg, 6%);
 @pagination-hover-border:              transparent;
 
@@ -497,8 +512,8 @@
 //## Define colors for form feedback states and, by default, alerts.
 
 @state-success-text:             #fff;
-@state-success-bg:               @godot_dark_blue;
-@state-success-border:           @godot_dark_blue;
+@state-success-bg:               @dark-color;
+@state-success-border:           @dark-color;
 
 @state-info-text:                #fff;
 @state-info-bg:                  @brand-info;
@@ -536,7 +551,7 @@
 //##
 
 //** Popover body background color
-@popover-bg:                          @godot_white;
+@popover-bg:                          white;
 //** Popover maximum width
 @popover-max-width:                   276px;
 //** Popover border color
@@ -669,14 +684,14 @@
 //##
 
 //** Background color on `.list-group-item`
-@list-group-bg:                 @godot_white;
+@list-group-bg:                 white;
 //** `.list-group-item` border color
 @list-group-border:             transparent;
 //** List group border radius
 @list-group-border-radius:      0;
 
 //** Background color of single list items on hover
-@list-group-hover-bg:           @godot_blue;
+@list-group-hover-bg:           @primary-color;
 //** Text color of active list items
 @list-group-active-color:       @component-active-color;
 //** Background color of active list items
@@ -702,19 +717,19 @@
 //
 //##
 
-@panel-bg:                    @godot_white;
+@panel-bg:                    white;
 @panel-body-padding:          15px;
 @panel-heading-padding:       10px 15px;
 @panel-footer-padding:        @panel-heading-padding;
 @panel-border-radius:         @border-radius-base;
 
 //** Border color for elements within panels
-@panel-inner-border:          @godot_dark_blue; //@gray;
-@panel-footer-bg:             @godot_dark_blue; //@gray;
+@panel-inner-border:          @dark-color;
+@panel-footer-bg:             @dark-color;
 
 @panel-default-text:          #000; //#fff; //@text-color;
-@panel-default-border:        @godot_dark_blue; //@gray;
-@panel-default-heading-bg:    @godot_dark_blue; //@gray-dark;
+@panel-default-border:        @dark-color;
+@panel-default-heading-bg:    @dark-color;
 
 @panel-primary-text:          #000; //#fff;
 @panel-primary-border:        @brand-primary;
@@ -760,7 +775,7 @@
 //
 //##
 
-@well-bg:                     @godot_light_gray;
+@well-bg:                     @base-color;
 @well-border:                 @godot_gray;
 
 
@@ -768,15 +783,15 @@
 //
 //##
 
-@badge-color:                 @godot_white;
+@badge-color:                 white;
 //** Linked badge text color on hover
 @badge-link-hover-color:      #fff;
-@badge-bg:                    @godot_dark_blue;
+@badge-bg:                    @dark-color;
 
 //** Badge text color in active nav link
-@badge-active-color:          @godot_light_blue; //@brand-primary;
+@badge-active-color:          @primary-color-text;
 //** Badge background color in active nav link
-@badge-active-bg:             @godot_dark_blue; //#fff;
+@badge-active-bg:             @dark-color;
 
 @badge-font-weight:           bold;
 @badge-line-height:           1;
@@ -790,7 +805,7 @@
 @breadcrumb-padding-vertical:   8px;
 @breadcrumb-padding-horizontal: 15px;
 //** Breadcrumb background color
-@breadcrumb-bg:                 @godot_blue;
+@breadcrumb-bg:                 @primary-color;
 //** Breadcrumb text color
 @breadcrumb-color:              #fff; //@text-color;
 //** Text color of current page in the breadcrumb

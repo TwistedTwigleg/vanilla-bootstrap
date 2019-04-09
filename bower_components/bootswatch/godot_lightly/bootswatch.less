@@ -127,6 +127,14 @@ table,
 
 // Forms ======================================================================
 
+.InputBox
+{
+  &:focus
+  {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+}
+
 input,
 textarea {
   color: @input-color;
@@ -135,11 +143,12 @@ textarea {
 .form-control,
 input,
 textarea {
-  border: none;
-  .box-shadow(none);
+  border-radius: 0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow:none;
 
   &:focus {
-    .box-shadow(none);
+    box-shadow:inset 0 0 3px 3px rgba(0,0,0,.05);
   }
 }
 
@@ -241,8 +250,12 @@ textarea {
   }
 }
 
-.breadcrumb a {
-  color: #fff;
+.breadcrumb {
+
+  border-radius: 0px;
+  & a {
+    color: #fff;
+  }
 }
 
 // Indicators =================================================================
@@ -279,7 +292,13 @@ textarea {
 // Containers =================================================================
 
 .well {
+  padding: 0px;
+  border: none;
   .box-shadow(none);
+
+  &:focus {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
 }
 
 a.list-group-item {
@@ -332,6 +351,38 @@ a.list-group-item {
   background-color: @panel-footer-bg;
 }
 
+// emojis
+// the new ones are awfully small by default
+span.safeEmoji.nativeEmoji {
+  font-size: 21px;
+}
+
+// Popup
+#Popup {
+  & div.Border
+  {
+    background-color: white;
+    border-radius: 0;
+
+    & div.Content {
+      & h1 {
+        border: none;
+        color: @accent-color;
+        text-transform: uppercase;
+        font-weight: bold;
+      }
+
+      & p {
+        font-style: italic;
+        font-weight: 500;
+      }
+    }
+
+    & div.Buttons.Footer {
+      border: none;
+    }
+  }
+}
 
 // =================================================================
 // ****** ADDATIONAL CSS/LESS ******
@@ -339,21 +390,63 @@ a.list-group-item {
 // that ideally should be replaced (if possible) by CSS/LESS
 // in variables.less!
 
+ul.Dropdown.MenuItems
+{
+  width: 100%;
+  border-radius: 0;
+}
+
+aside.page-sidebar > div.BoxButtons.BoxNewDiscussion
+{
+  & > div.ButtonGroup
+  {
+    width: 100%;
+    align-content: center;
+
+    & > a.Button.Primary
+    {
+      min-width: 84%;
+      max-width: 84%;
+    }
+
+    & > a.Button.Primary.Handle
+    {
+      min-width: 16%;
+      max-width: 16%;
+    }
+  }
+}
+
 // The box just below new discussion, that contains categories, activity, etc.
 //
 // This box is visible when viewing Categories, when in the activity page, and
 // when looking at a profile.
 div.BoxFilter.BoxDiscussionFilter, div.BoxFilter.BoxActivityFilter, div.BoxFilter.BoxProfileFilter
 {
-    background-color: @godot_white;
-    border-radius: 0;
     
+    margin-top: 18px;
+    margin-bottom: 8px;
+    
+    background-color: white;
+    border-radius: 0;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0px rgba(0, 0, 0, .1);
+    transition: box-shadow .2s ease-in-out;
+
+    &:hover{
+      box-shadow: 0 0 12px rgba(0, 0, 0, .2), 0 0 2px rgba(0, 0, 0, .1);
+    }
+    
+    & ul.FilterMenu{
+      padding: 0;
+    }
+
     // Change the text links so they are colored properly.
     & li
     {
         // Not sure on this, might look better without...
-        border-top-width: 2px;
-        border-top-color: rgba(1, 1, 1, 0.2);
+        border-top-width: 1px;
+        border-top-color: rgba(1, 1, 1, 0.05);
         border-top-style: solid;
         border-radius: 0;
         
@@ -365,29 +458,93 @@ div.BoxFilter.BoxDiscussionFilter, div.BoxFilter.BoxActivityFilter, div.BoxFilte
             &:hover, &:active
             {
                 color: white;
+
+                & span.Count
+                {
+                  color: @primary-color-text;
+                }
             }
+            
         }
+    }
+}
+
+// The categories panel
+ul.PanelInfo.PanelCategories
+{
+    border-radius: 0;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0px rgba(0, 0, 0, .1);
+    transition: box-shadow .2s ease-in-out;
+
+    &:hover{
+      box-shadow: 0 0 12px rgba(0, 0, 0, .2), 0 0 2px rgba(0, 0, 0, .1);
+    }
+
+    & li
+    {
+      & a
+      {
+        &:hover
+        {
+          & span.Number
+          {
+            color: @primary-color-text;
+          }
+        }
+      }
     }
 }
 
 // The categories list
 div.Box.BoxCategories
 {
-    & ul.PanelInfo.PanelCategories li
+  & ul.PanelInfo.PanelCategories {
+    background-color: white;
+    border-radius: 0;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0px rgba(0, 0, 0, .1);
+    transition: box-shadow .2s ease-in-out;
+
+    &:hover{
+      box-shadow: 0 0 12px rgba(0, 0, 0, .2), 0 0 2px rgba(0, 0, 0, .1);
+    }
+
+    & li:first-child
+    {
+        // Remove top border from first element
+        border-top-width: 0;
+    }
+
+    & li
     {
         // Not sure on this, might look better without...
         border-top-width: 2px;
-        border-top-color: rgba(1, 1, 1, 0.2);
+        border-top-color: rgba(1, 1, 1, 0.05);
         border-top-style: solid;
     }
     
     // The headings (like Godot Community, Godot Help, ect)
     & li.ClearFix.Heading
     {
-        background-color: @godot_blue;
-        color: white;
+        background-color: @primary-color;
+        color: @primary-color-text-hl;
         font-weight: bold;
+
+        & span.Number{
+          color: @primary-color-text-hl;
+        }
     }
+  }
+}
+
+// Span "Count" that appears for an examle at the end of categories in the sidepanel or tags, etc.
+section.container
+{
+  & span.Count, & span.Number{
+    background-color: inherit;
+    color: @base-color-text;
+  }
 }
 
 // Make the light gray link text a different color when the mouse is scrolled over it.
@@ -423,7 +580,7 @@ span.MItem.DiscussionAuthor
     
     // I'd rather use a different color, but I cannot find a way to color the <a> element.
     // Anything I try to add to the <a> element gets overriden by another CSS file...
-    background-color: @godot_light_gray;
+    background-color: @base-color;
     border-radius: 0;
 }
 
@@ -431,7 +588,7 @@ span.MItem.DiscussionAuthor
 ul.DataList.Activities
 {
     // Making the username in the activity list readable and add a colored border.
-    & .Title,
+    & .Title
     {
         padding-bottom: 8px;
         
@@ -441,7 +598,7 @@ ul.DataList.Activities
             padding-left: 4px;
             padding-right: 4px;
 
-            background-color: @godot_light_gray;
+            background-color: @base-color;
             border-radius: 0;
         }
     }
@@ -454,7 +611,7 @@ ul.DataList.Activities
             padding-left: 4px;
             padding-right: 4px;
 
-            background-color: @godot_light_gray;
+            background-color: @base-color;
             border-radius: 0;
         }
     }
@@ -485,13 +642,28 @@ div#PagerBefore.Pager, div#PagerAfter.Pager
     }
 }
 
-// Make the box at the button when making a comment/post light-gray instead of dark blue.
-// This makes the buttons stand out a bit. Not 100% sure if we should keep this or not...
+// Make the box with the button when making a comment/post light-gray instead of dark blue.
+// This makes the buttons stand out a bit.
 form[id="Form_Comment"]
 {
     & div div.Buttons
     {
-        background-color: @godot_light_gray;
+        background-color: @base-color;
+    }
+}
+
+// MessageForm for message editing.
+// div.MessageForm.CommentForm. - will leave unfixed for now so users can see what to identify as issue.
+
+// Make the box with the buttons when editing a comment/post white instead of dark blue.
+div.MessageForm.EditCommentForm
+{
+    & form
+    {
+        & div div.Buttons
+        {
+            background-color: white;
+        }
     }
 }
 
@@ -543,11 +715,29 @@ span.MItem.RoleTitle
     {
         background-color: #be7309;
     }
-    &[id="Godot Developer"]
+    &[id="Godot Developer"], &[id="Godot Leader"]
     {
         background-color: #fff;
-        color: @godot_blue;
+        color: @primary-color;
     }
+}
+
+// Discussion Item (opening post)
+div.Item.ItemDiscussion{
+    border: none;
+    border-radius: 0;
+    & div *{
+      border-radius: 0;
+    }
+}
+
+// Comment Item (following posts)
+li.Item.ItemComment{
+  border: none;
+  border-radius: 0;
+  & div *{
+    border-radius: 0;
+  }
 }
 
 // Change the accepted answer comment background color
@@ -596,7 +786,16 @@ div.Box.GuestBox
 // Change the background color of the items in the tag cloud
 ul.TagCloud li
 {
-    background-color: @godot_white;
+    background-color: white;
+    
+    border-radius: 0;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0px rgba(0, 0, 0, .1);
+    transition: box-shadow .2s ease-in-out;
+
+    &:hover{
+      box-shadow: 0 0 12px rgba(0, 0, 0, .2), 0 0 2px rgba(0, 0, 0, .1);
+    }
 }
 
 // Change the color of the close (cross) buttons
@@ -605,14 +804,58 @@ a.Close, a.Delete
     color: black;
 }
 
+main.page-content h1.H.HomepageTitle, main.page-content h1.H
+{
+  text-transform: uppercase;
+  font-weight: bold;
+  color: @base-color-text-title;
+}
+
 // Custom styling for the categories table
+div.CategoryGroup{
+  border-color: rgba(0, 0, 0, 0.2);
+  border-radius: 0;
+  box-shadow: 0 0px rgba(0, 0, 0, .1);
+  transition: box-shadow .2s ease-in-out;
+
+  &:hover{
+    box-shadow: 0 0 12px rgba(0, 0, 0, .2), 0 0 2px rgba(0, 0, 0, .1);
+  }
+
+  & h2.H{
+    padding: 8px;
+    border: none;
+    background-color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: @base-color-text-title;
+  }
+}
+
+main.page-content > div.DataTableWrap{
+  border-radius: 0;
+  border-color: rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0px rgba(0, 0, 0, .1);
+  transition: box-shadow .2s ease-in-out;
+
+  &:hover{
+    box-shadow: 0 0 12px rgba(0, 0, 0, .2), 0 0 2px rgba(0, 0, 0, .1);
+  }  
+}
+
 table.DataTable.CategoryTable
 {
-    // Each table row...
+  // Table heading
+    & thead tr td div.Wrap{
+        text-transform: lowercase;
+        color: @base-color-text;
+    }
+
+  // Each table row...
     & tbody tr
     {
-        border-bottom-width: 2px;
-        border-bottom-color: rgba(1, 1, 1, 0.2);
+        border-bottom-width: 1px;
+        border-bottom-color: rgba(0, 0, 0, 0.05);
         border-bottom-style: solid;
         
         // When the table row is active, make the text white
@@ -621,16 +864,19 @@ table.DataTable.CategoryTable
             color: white;
             
             // For some reason the link (a) needs to be specifically overwritten.
+            // Yes, because of specificity - M.
             & td div h3 a
             {
                 color: white;
+                text-transform: uppercase;
             }
             
             & td div h2 a
             {
                 color: white;
+                text-transform: uppercase;
             }
-            
+
         }
         
         // Make the link (a) bold with no underscores
@@ -638,6 +884,14 @@ table.DataTable.CategoryTable
         {
             font-weight: bold;
             text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        & td div h2 a
+        {
+            font-weight: bold;
+            text-decoration: none;
+            text-transform: uppercase;
         }
         
         // Make sure to mark the categories that are only for holding
@@ -654,18 +908,26 @@ h2.H.categoryList-heading
 // Custom styling for the discusisons and activies list
 ul.DataList.Discussions, ul.DataList.Activities
 {
-    & li
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0px rgba(0, 0, 0, .1);
+  transition: box-shadow .2s ease-in-out;
+
+  &:hover{
+    box-shadow: 0 0 12px rgba(0, 0, 0, .2), 0 0 2px rgba(0, 0, 0, .1);
+  }
+
+  & li
     {
         border-bottom-width: 2px;
-        border-bottom-color: rgba(1, 1, 1, 0.2);
+        border-bottom-color: rgba(0, 0, 0, 0.05);
         border-bottom-style: solid;
         
         & div.Options
         {
-            color: @godot_white;
+            color: white;
             &:active, &:hover
             {
-                color: @godot_coral;
+                color: @accent-color;
             }
         }
     }
@@ -750,6 +1012,7 @@ div[id="GodotEngine_Header"]
                     text-decoration: none;
                     font-size: 16px;
                     font-weight: bold;
+                    text-transform: uppercase;
                     color: #333f67;
                     
                     &:hover
@@ -781,6 +1044,7 @@ div[id="GodotEngine_Header"]
                     text-decoration: none;
                     font-size: 16px;
                     font-weight: bold;
+                    text-transform: uppercase;
                     color: #333f67;
                     
                     &:hover
@@ -829,6 +1093,36 @@ div[id="GodotEngine_Header"]
         
         transform: rotate(-135deg);
         -webkit-transform: rotate(-135deg);
+    }
+}
+
+// The bottom left notification box that appears when you
+// select a topic or a category via checkbox for modification.
+div.InformMessages{
+  & #CheckSummary div.InformMessage{
+    border-radius: 0;
+  }
+}
+
+// CSS for the button that expands and collapses the side menu
+button.sidebar-toggle
+{
+    background-color: @dark-color;
+    color: white;
+    vertical-align: middle;
+    
+    width: 100%;
+    height: 42px;
+    
+    padding-top: 4px;
+    padding-bottom: 4px;
+    
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0px rgba(0, 0, 0, .1);
+    transition: box-shadow .2s ease-in-out;
+
+    &:hover{
+        box-shadow: 0 0 12px rgba(0, 0, 0, .2), 0 0 2px rgba(0, 0, 0, .1);
     }
 }
 
@@ -942,5 +1236,6 @@ div[id="GodotEngine_Header"]
         }
     }
 }
+
 // *********************************************************
 
