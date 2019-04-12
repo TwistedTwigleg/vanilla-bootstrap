@@ -753,29 +753,44 @@ div.Item.ItemDiscussion{
 }
 
 // Comment Item (following posts)
-li.Item.ItemComment{
-  border: none;
-  border-radius: 0;
-  & div *{
+div.CommentsWrap,
+div.DataBox.DataBox-AcceptedAnswers
+{
+  li.Item.ItemComment{
+    border: none;
     border-radius: 0;
+    & div *{
+      border-radius: 0;
+    }
+
+    & .Comment
+    {
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      box-shadow: 0 0px rgba(0, 0, 0, .1);
+      transition: box-shadow .2s ease-in-out;
+    
+      &:hover{
+        box-shadow: 0 0 12px rgba(0, 0, 0, .2), 0 0 2px rgba(0, 0, 0, .1);
+      }
+    }
   }
 }
 
 // Change the accepted answer comment background color
 ul.MessageList.DataList.AcceptedAnswers li div.Comment
 {
-    background-color: #c2d7f7;
+  background: linear-gradient(0.5075turn, white 66%, lightgoldenrodyellow);
 }
 
 // Change the color of the accepted QnA box and QnA tag.
 span.Tag.QnA-Box.QnA-Accepted, span.Tag.QnA-Tag-Accepted
 {
-    background-color: #2f82d0;
+  background-color: #2f82d0;
 }
 // Change the color of the question QnA box and QnA tag.
 span.Tag.QnA-Box.QnA-Question, span.Tag.QnA-Tag-Question
 {
-    background-color: #100e2a
+  background-color: #100e2a
 }
 
 // NOTE: CSS for forum tags can be found in the TagExtended plugin!
