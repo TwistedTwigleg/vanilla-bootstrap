@@ -747,7 +747,8 @@ span.MItem.RoleTitle
 div.Item.ItemDiscussion{
     border: none;
     border-radius: 0;
-    & div *{
+    & div, img
+    {
       border-radius: 0;
     }
 }
@@ -759,7 +760,8 @@ div.DataBox.DataBox-AcceptedAnswers
   li.Item.ItemComment{
     border: none;
     border-radius: 0;
-    & div *{
+    & div, img
+    {
       border-radius: 0;
     }
 
@@ -785,7 +787,8 @@ ul.MessageList.DataList.AcceptedAnswers li div.Comment
 // Change the color of the accepted QnA box and QnA tag.
 span.Tag.QnA-Box.QnA-Accepted, span.Tag.QnA-Tag-Accepted
 {
-  background-color: #2f82d0;
+  background-color: lightgoldenrodyellow;
+  color: @base-color-text;
 }
 // Change the color of the question QnA box and QnA tag.
 span.Tag.QnA-Box.QnA-Question, span.Tag.QnA-Tag-Question
