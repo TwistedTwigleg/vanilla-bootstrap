@@ -547,30 +547,6 @@ section.container
   }
 }
 
-// Make the light gray link text a different color when the mouse is scrolled over it.
-// This makes things, like the username, readable when scrolling over the table element.
-table.DataTable.CategoryTable
-{
-    & tbody tr:hover
-    {
-        & td.BlockColumn.LatestPost div
-        {
-            & div.Meta
-            {
-                color: @godot_gray;
-                & a
-                {
-                    color: @godot_gray;
-                }
-            }
-            & a.BlockTitle.LatestPostTitle
-            {
-                color: @godot_gray;
-            }
-        }
-    }
-}
-
 // Making the username in the discusison list readable and add a colored border.
 span.MItem.DiscussionAuthor
 {    
@@ -873,8 +849,8 @@ table.DataTable.CategoryTable
         text-transform: lowercase;
         color: @base-color-text;
     }
-
-  // Each table row...
+    
+    // Each table row...
     & tbody tr
     {
         border-bottom-width: 1px;
@@ -898,6 +874,32 @@ table.DataTable.CategoryTable
             {
                 color: white;
                 text-transform: uppercase;
+            }
+            
+            // Make gray link text in the topic name and the meta data about the topic
+            // change color when hovered so it is easier to see.
+            & td.BlockColumn.LatestPost div
+            {
+                & div.Meta
+                {
+                    color: @godot_gray;
+                    & a
+                    {
+                        color: @godot_gray;
+                    }
+                }
+                & a.BlockTitle.LatestPostTitle
+                {
+                    color: @accent-color;
+                }
+            }
+            // Same as above, but for the discussion and comment counts
+            & td.BigCount.CountDiscussions, & td.BigCount.CountComments
+            {
+                & div span
+                {
+                    color: white;
+                }
             }
 
         }
