@@ -667,6 +667,29 @@ div.MessageForm.EditCommentForm
     }
 }
 
+// Make Lists within preview/edit posts look the same as the processed lists (at least for Markdown)
+form[id="Form_Comment"]
+{
+    div.Preview div.Message
+    {
+        & ul li
+        {
+            list-style: circle;
+            margin-bottom: 0;
+            margin-top: 0;
+            margin-left: 40px;
+        }
+        & ol li
+        {
+            list-style: decimal;
+            margin-bottom: 0;
+            margin-top: 0;
+            margin-left: 40px;
+        }
+
+    }
+}
+
 // Making the username text color readable,
 // making sure it has space, and adding a colored border.
 span.Author a.Username
