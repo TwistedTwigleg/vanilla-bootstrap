@@ -629,16 +629,38 @@ form[id="Form_Comment"]
 }
 
 // MessageForm for message editing.
-// div.MessageForm.CommentForm. - will leave unfixed for now so users can see what to identify as issue.
+// CommentForm for new message composition.
+div.MessageForm.CommentForm
+{
+  border-radius: 0;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0px rgba(0, 0, 0, .1);
+  transition: box-shadow .2s ease-in-out;
 
-// Make the box with the buttons when editing a comment/post white instead of dark blue.
-div.MessageForm.EditCommentForm
+  &:hover{
+    box-shadow: 0 0 12px rgba(0, 0, 0, .2), 0 0 2px rgba(0, 0, 0, .1);
+  }
+
+  & form
+  {
+    & div div.Buttons
+    {
+      padding-top: 0;
+    }
+  }
+}
+
+// Make the box with the buttons when composing or editing a message white, remove border and tweak padding.
+div.MessageForm
 {
     & form
     {
         & div div.Buttons
         {
-            background-color: white;
+          background-color: white;
+          border: none;
+          padding: 10px 15px;
+          padding-top: 0;
         }
     }
 }
