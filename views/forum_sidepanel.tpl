@@ -1,9 +1,10 @@
 <!-- The side panel for the forum. -->
+
 {if InSection(array("CategoryList", "CategoryDiscussionList", "DiscussionList", "Discussion"))}
     {module name="NewDiscussionModule"}
 {/if}
 
-{if InSection(array("CategoryList", "CategoryDiscussionList", "DiscussionList", "Discussion", "Profile", "Conversations"))}
+{if InSection(array("CategoryList", "CategoryDiscussionList", "DiscussionList", "Discussion", "Conversations"))}
     {module name="DiscussionFilterModule"}
 {/if}
 
@@ -11,7 +12,15 @@
     {module name="ActivityFilterModule"}
 {/if}
 
-{if InSection(array("CategoryDiscussionList", "DiscussionList", "Discussion", "Profile", "Conversations"))}
+{if InSection(array("Profile"))}
+    {module name="UserPhotoModule"}
+    {module name="ProfileFilterModule"}
+
+    {module name="BadgesModule"}
+    {module name="FriendshipsModule"}
+{/if}
+
+{if InSection(array("CategoryDiscussionList", "DiscussionList", "Discussion", "Conversations"))}
     <button type="button" class="sidebar-toggle" data-toggle="collapse" data-target=".sidebar-categories-collapse">
         Categories
     </button>
@@ -20,7 +29,7 @@
     </div>
 {/if}
 
-{if InSection(array("CategoryList", "CategoryDiscussionList", "DiscussionList", "Profile", "Conversations"))}
+{if InSection(array("CategoryList", "CategoryDiscussionList", "DiscussionList", "Conversations"))}
     <button type="button" class="sidebar-toggle" data-toggle="collapse" data-target=".sidebar-tags-collapse">
         Tags
     </button>
@@ -28,3 +37,5 @@
         {module name="TagModule"}
     </div>
 {/if}
+
+<!-- {asset name="Panel"} -->
