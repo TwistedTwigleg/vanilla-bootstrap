@@ -87,10 +87,9 @@
       <div class="row">
           
         <aside class="page-sidebar" role="complementary">
+            
             {include './forum_sidepanel.tpl'}
-						{if InSection(array("CategoryList", "CategoryDiscussionList", "DiscussionList", "Discussion", "Profile", "Conversations"))}
-                {pocket name="Discord Embed Pocket"}
-            {/if}
+
         </aside>
 		
         <main class="page-content" role="main">

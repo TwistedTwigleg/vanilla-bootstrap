@@ -38,4 +38,11 @@
     </div>
 {/if}
 
-<!-- {asset name="Panel"} -->
+
+
+<!-- Discord plugin module -->
+
+{if InSection(array("CategoryList", "CategoryDiscussionList", "DiscussionList", "Discussion", "Profile", "Conversations"))}
+	{module name="DiscordEmbedWidgetModule"}
+{/if}
+
