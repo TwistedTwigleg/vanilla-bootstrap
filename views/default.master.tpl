@@ -93,10 +93,12 @@
         </aside>
 		
         <main class="page-content" role="main">
-          {breadcrumbs}
-          {if InSection(array("CategoryList", "CategoryDiscussionList", "DiscussionList"))}
-            <div class="well search-form">{searchbox}</div>
-          {/if}
+          <div class="ContentTop">
+            {breadcrumbs}
+            {if InSection(array("CategoryList", "CategoryDiscussionList", "DiscussionList"))}
+              <div class="well search-form">{searchbox}</div>
+            {/if}
+          </div>
           {asset name="Content"}
         </main> 
         

@@ -251,11 +251,16 @@ textarea {
 }
 
 .breadcrumb {
+  width: auto;
+  flex-grow: 2;
 
+  // background-color: inherit;
   border-radius: 0px;
-  & a {
-    color: #fff;
-  }
+}
+
+.CrumbLabel.Last *
+{
+  color: @base-color-text;
 }
 
 // Indicators =================================================================
@@ -291,7 +296,15 @@ textarea {
 
 // Containers =================================================================
 
+.ContentTop
+{
+  display: flex;
+  flex-direction: row;
+}
+
 .well {
+  flex-grow: 1;
+
   padding: 0px;
   border: none;
   .box-shadow(none);
@@ -1300,7 +1313,15 @@ button.sidebar-toggle
           display: block;
         }
     }
+
+    // For smaller screens change the flex direction to column 
+    .ContentTop
+    {
+      flex-direction: column;
+    }
+
 }
+
 
 // *********************************************************
 
