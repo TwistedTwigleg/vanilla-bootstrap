@@ -20,6 +20,11 @@
     {module name="FriendshipsModule"}
 {/if}
 
+
+{if InSection(array("Conversation", "ConversationList"))}
+    {asset name="Panel"}
+{/if}
+
 {if InSection(array("CategoryDiscussionList", "DiscussionList", "Discussion", "Conversations"))}
     <button type="button" class="sidebar-toggle" data-toggle="collapse" data-target=".sidebar-categories-collapse">
         Categories
