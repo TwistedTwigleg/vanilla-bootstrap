@@ -608,14 +608,16 @@ form[id="Form_Comment"]
 // MessageForm for message editing.
 // div.MessageForm.CommentForm. - will leave unfixed for now so users can see what to identify as issue.
 
-// Make the box with the buttons when editing a comment/post white instead of dark blue.
-div.MessageForm.EditCommentForm
+// Make the box with the buttons when editing a comment/post gray.
+div.MessageForm.EditCommentForm, div.FormWrapper.FormWrapper-Condensed
 {
     & form
     {
         & div div.Buttons
         {
-            background-color: @base-color;
+            background-color: @gray;
+            padding-top: 4px;
+            padding-bottom: 4px;
         }
     }
 }
@@ -722,10 +724,17 @@ ul.MessageList.DataList.AcceptedAnswers li div.Comment
     background-color: #142134;
 }
 
+// Change the accepted answer comment background color
+ul.MessageList.DataList.AcceptedAnswers li div.Comment
+{
+  background: linear-gradient(0.5075turn, @gray-dark 66%, #213155);
+}
+
 // Change the color of the accepted QnA box and QnA tag.
 span.Tag.QnA-Box.QnA-Accepted, span.Tag.QnA-Tag-Accepted
 {
     background-color: #2f82d0;
+    color: white;
 }
 // Change the color of the question QnA box and QnA tag.
 span.Tag.QnA-Box.QnA-Question, span.Tag.QnA-Tag-Question
