@@ -236,8 +236,16 @@ textarea {
   }
 }
 
-.breadcrumb a {
-  color: #fff;
+.breadcrumb
+{
+  width: auto;
+    flex-grow: 2;
+    
+    border-radius: 0px;
+}
+.CrumbLabel.Last *
+{
+    color: white;
 }
 
 // Indicators =================================================================
@@ -273,8 +281,23 @@ textarea {
 
 // Containers =================================================================
 
-.well {
+.ContentTop
+{
+    display: flex;
+    flex-direction: row;
+}
+
+.well
+{
+  flex-grow: 1;
+
+  padding: 0px;
+  border: none;
   .box-shadow(none);
+
+  &:focus {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
 }
 
 a.list-group-item {
@@ -764,6 +787,50 @@ main.page-content h1.H.HomepageTitle, main.page-content h1.H
   color: @base-color-text-title;
 }
 
+// Unsure if we'll want these changes or not - Twisted
+//
+// Remove the homepage title, make the Breadcrumbs bigger, and style the page description.
+// This should help condense the topics list a bit without losing any vital information.
+h1.H.HomepageTitle
+{
+    display: none;
+}
+span.Breadcrumbs
+{
+    font-size: x-large;
+    padding: 0;
+    padding-left: 12px;
+    margin-right: 8px;
+    background-color: white;
+    min-height: 43px;
+    
+    box-shadow: 0 0px rgba(0, 0, 0, .1);
+    transition: box-shadow .2s ease-in-out;
+
+    &:hover{
+        box-shadow: 0 0 12px rgba(0, 0, 0, .2), 0 0 2px rgba(0, 0, 0, .1);
+    }
+}
+div.well.search-form
+{
+    min-width: 360px;
+    min-height: 43px;
+    
+    box-shadow: 0 0px rgba(0, 0, 0, .1);
+    transition: box-shadow .2s ease-in-out;
+
+    &:hover{
+        box-shadow: 0 0 12px rgba(0, 0, 0, .2), 0 0 2px rgba(0, 0, 0, .1);
+    }
+}
+div.P.PageDescription
+{
+    font-style: italic;
+    padding-left: 8px; padding-right: 8px;
+    padding-top: 4px; padding-bottom: 4px;
+}
+// End of changes I'm unsure on - Twisted.
+
 // Custom styling for the categories table
 div.CategoryGroup{
   border-color: rgba(0, 0, 0, 0.2);
@@ -1213,6 +1280,12 @@ button.sidebar-toggle
           width: 100%;
           display: block;
         }
+    }
+    
+    // For smaller screens change the flex direction to column 
+    .ContentTop
+    {
+      flex-direction: column;
     }
 }
 
