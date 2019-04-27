@@ -12,14 +12,9 @@
     {module name="ActivityFilterModule"}
 {/if}
 
-{if InSection(array("Profile"))}
-    {module name="UserPhotoModule"}
-    {module name="ProfileFilterModule"}
-
-    {module name="BadgesModule"}
-    {module name="FriendshipsModule"}
+{if InSection(array("Profile", "EditProfile"))}
+    {asset name="Panel"}
 {/if}
-
 
 {if InSection(array("Conversation", "ConversationList"))}
     {asset name="Panel"}
@@ -42,7 +37,6 @@
         {module name="TagModule"}
     </div>
 {/if}
-
 
 
 <!-- Discord plugin module -->
