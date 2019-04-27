@@ -241,6 +241,7 @@ textarea {
   width: auto;
     flex-grow: 2;
     
+    background-color: inherit;
     border-radius: 0px;
 }
 .CrumbLabel.Last *
@@ -771,15 +772,13 @@ div.Box.GuestBox
 // Change the background color of the items in the tag cloud
 ul.TagCloud li
 {
-    background-color: @gray;
+    background-color: inherit;
     
     border-radius: 0;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    box-shadow: 0 0px rgba(0, 0, 0, .1);
-    transition: box-shadow .2s ease-in-out;
-
-    &:hover{
-      box-shadow: 0 0 12px rgba(0, 0, 0, .2), 0 0 2px rgba(0, 0, 0, .1);
+    border-color: transparent;
+    
+    & span.Count {
+        background-color: @gray;
     }
 }
 
@@ -796,30 +795,21 @@ main.page-content h1.H.HomepageTitle, main.page-content h1.H
   color: @base-color-text-title;
 }
 
-// Unsure if we'll want these changes or not - Twisted
-//
-// Remove the homepage title, make the Breadcrumbs bigger, and style the page description.
-// This should help condense the topics list a bit without losing any vital information.
-h1.H.HomepageTitle
+// Remove the homepage title and falvor text
+h1.H.HomepageTitle, div.P.PageDescription
 {
     display: none;
 }
+// make the Breadcrumbs bigger and chang the padding
 span.Breadcrumbs
 {
     font-size: x-large;
     padding: 0;
     padding-left: 12px;
     margin-right: 8px;
-    background-color: @gray;
     min-height: 43px;
-    
-    box-shadow: 0 0px rgba(0, 0, 0, .1);
-    transition: box-shadow .2s ease-in-out;
-
-    &:hover{
-        box-shadow: 0 0 12px rgba(0, 0, 0, .2), 0 0 2px rgba(0, 0, 0, .1);
-    }
 }
+// Cardify the search form.
 div.well.search-form
 {
     min-width: 360px;
@@ -832,13 +822,6 @@ div.well.search-form
         box-shadow: 0 0 12px rgba(0, 0, 0, .2), 0 0 2px rgba(0, 0, 0, .1);
     }
 }
-div.P.PageDescription
-{
-    font-style: italic;
-    padding-left: 8px; padding-right: 8px;
-    padding-top: 4px; padding-bottom: 4px;
-}
-// End of changes I'm unsure on - Twisted.
 
 // Custom styling for the categories table
 div.CategoryGroup{
