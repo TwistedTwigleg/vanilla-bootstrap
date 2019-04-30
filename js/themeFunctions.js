@@ -14,4 +14,14 @@ function scrollFunction() {
 function topFunction() {
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-} 
+}
+
+// TODO: Make this a plugin - Twisted.
+// Convert all links to GodotDevelopers.org to GodotForums.org
+$(document).ready(function(){
+    $('a[href^="https://godotdevelopers.org"]').each(function(){
+        var oldUrl = $(this).attr("href");
+        var newUrl = oldUrl.replace("https://godotdevelopers.org/forum/", "https://godotforums.org/")
+        $(this).attr("href", newUrl);
+    })
+})
