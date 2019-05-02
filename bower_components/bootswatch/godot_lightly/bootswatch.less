@@ -767,10 +767,13 @@ div.Item.ItemDiscussion{
 }
 
 // Comment Item (following posts)
+// And not to forget the Converstions(PM's)
+div.DataListWrap,
 div.CommentsWrap,
 div.DataBox.DataBox-AcceptedAnswers
+
 {
-  li.Item.ItemComment{
+  li.Item{
     border: none;
     border-radius: 0;
     & div, img
@@ -778,11 +781,15 @@ div.DataBox.DataBox-AcceptedAnswers
       border-radius: 0;
     }
 
-    & .Comment
+    & .Comment, & .ConversationMessage
     {
       border: 1px solid rgba(0, 0, 0, 0.2);
       box-shadow: 0 0px rgba(0, 0, 0, .1);
       transition: box-shadow .2s ease-in-out;
+
+      & .Meta{
+        border-radius: inherit;
+      }
     
       &:hover{
         box-shadow: 0 0 12px rgba(0, 0, 0, .2), 0 0 2px rgba(0, 0, 0, .1);
