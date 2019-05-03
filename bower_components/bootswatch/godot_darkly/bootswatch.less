@@ -648,6 +648,14 @@ form[id="Form_Comment"]
     }
 }
 
+// Make text areas gray with white text, just like how they will be when actually posted.
+// (NOTE: Also effects the search bar.)
+.InputBox
+{
+    background-color: @gray; //@gray-lighter;
+    color: white;
+}
+
 // Making the username text color readable,
 // making sure it has space, and adding a colored border.
 span.Author a.Username
@@ -963,6 +971,16 @@ ul.DataList.Discussions, ul.DataList.Activities
                 color: @accent-color;
             }
         }
+    }
+}
+
+// Make the theme chooser plugin dropdown gray instead of white in GodotDarkly
+li.ThemeChooser
+{
+    & select
+    {
+        background-color: @gray;
+        color: white;
     }
 }
 
