@@ -516,6 +516,18 @@ div.Box.BoxCategories
   }
 }
 
+// Side panel when editing profile
+div.Box.Group.SideMenu
+{
+    & ul.PanelInfo
+    {
+        & li a
+        {
+            color: white;
+        }
+    }
+}
+
 // Span "Count" that appears for an examle at the end of categories in the sidepanel or tags, etc.
 section.container
 {
@@ -596,16 +608,6 @@ div#PagerBefore.Pager, div#PagerAfter.Pager
     }
 }
 
-// Make the box with the button when making a comment/post light-gray instead of dark blue.
-// This makes the buttons stand out a bit.
-form[id="Form_Comment"]
-{
-    & div div.Buttons
-    {
-        background-color: @base-color;
-    }
-}
-
 // MessageForm for message editing.
 // div.MessageForm.CommentForm. - will leave unfixed for now so users can see what to identify as issue.
 
@@ -616,7 +618,7 @@ div.MessageForm.EditCommentForm, div.FormWrapper.FormWrapper-Condensed
     {
         & div div.Buttons
         {
-            background-color: @gray;
+            background-color: @gray-dark;
             padding-top: 4px;
             padding-bottom: 4px;
         }
