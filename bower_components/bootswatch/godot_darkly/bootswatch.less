@@ -994,11 +994,16 @@ li.ThemeChooser
 }
 
 // Hide the most commented box.
-// TODO: need to decide what to do with this. This is hidden in the
-// old forums though, and for good reason I think.
 div.Box.BoxLatestComment
 {
     display: none;
+}
+
+// Put line numbers on every line in Code blocks
+li.L0, li.L1, li.L2, li.L3,
+li.L5, li.L6, li.L7, li.L8
+{
+  list-style-type: decimal !important;
 }
 
 // GodotEngine.org-like header stuff (practically copied from GodotEngine.org)
