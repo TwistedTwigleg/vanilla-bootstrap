@@ -54,10 +54,10 @@
 //** Background color for `<body>`.
 @body-bg:               @base-color;
 //** Global text color on `<body>`.
-@text-color:            #000;
+@text-color:            @base-color-text;
 
 //** Global textual link color.
-@link-color:            @accent-color;
+@link-color:            @primary-color;
 //** Link hover color.
 @link-hover-color:      @accent-color;
 //** Link hover decoration.
@@ -805,9 +805,9 @@
 @breadcrumb-padding-vertical:   8px;
 @breadcrumb-padding-horizontal: 15px;
 //** Breadcrumb background color
-@breadcrumb-bg:                 @primary-color;
+@breadcrumb-bg:                 @base-color;
 //** Breadcrumb text color
-@breadcrumb-color:              #fff; //@text-color;
+@breadcrumb-color:              @base-color-text; //@text-color;
 //** Text color of current page in the breadcrumb
 @breadcrumb-active-color:       #fff; //@gray-light;
 //** Textual separator for between breadcrumb elements
@@ -844,8 +844,8 @@
 //
 //##
 
-@code-color:                  #c7254e;
-@code-bg:                     #f9f2f4;
+@code-color:                  black;
+@code-bg:                     @#ebebeb;
 
 @kbd-color:                   #fff;
 @kbd-bg:                      #333;

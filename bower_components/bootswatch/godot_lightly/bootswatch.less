@@ -251,11 +251,16 @@ textarea {
 }
 
 .breadcrumb {
+  width: auto;
+  flex-grow: 2;
 
+  //background-color: inherit;
   border-radius: 0px;
-  & a {
-    color: #fff;
-  }
+}
+
+.CrumbLabel.Last *
+{
+  color: @base-color-text;
 }
 
 // Indicators =================================================================
@@ -291,7 +296,15 @@ textarea {
 
 // Containers =================================================================
 
+.ContentTop
+{
+  display: flex;
+  flex-direction: row;
+}
+
 .well {
+  flex-grow: 1;
+
   padding: 0px;
   border: none;
   .box-shadow(none);
@@ -390,9 +403,13 @@ span.safeEmoji.nativeEmoji {
 // that ideally should be replaced (if possible) by CSS/LESS
 // in variables.less!
 
-ul.Dropdown.MenuItems
+ul.Dropdown.MenuItems, ul.Flyout.MenuItems
 {
-  width: 100%;
+  min-width: 100%;
+  border-radius: 0;
+}
+.Flyout.FlyoutMenu.Flyout-withFrame
+{
   border-radius: 0;
 }
 
@@ -421,7 +438,8 @@ aside.page-sidebar > div.BoxButtons.BoxNewDiscussion
 //
 // This box is visible when viewing Categories, when in the activity page, and
 // when looking at a profile.
-div.BoxFilter.BoxDiscussionFilter, div.BoxFilter.BoxActivityFilter, div.BoxFilter.BoxProfileFilter
+div.BoxFilter.BoxDiscussionFilter, div.BoxFilter.BoxActivityFilter, div.BoxFilter.BoxProfileFilter,
+div.Box.InThisConversation>ul.PanelInfo
 {
     
     margin-top: 18px;
@@ -547,30 +565,6 @@ section.container
   }
 }
 
-// Make the light gray link text a different color when the mouse is scrolled over it.
-// This makes things, like the username, readable when scrolling over the table element.
-table.DataTable.CategoryTable
-{
-    & tbody tr:hover
-    {
-        & td.BlockColumn.LatestPost div
-        {
-            & div.Meta
-            {
-                color: @godot_gray;
-                & a
-                {
-                    color: @godot_gray;
-                }
-            }
-            & a.BlockTitle.LatestPostTitle
-            {
-                color: @godot_gray;
-            }
-        }
-    }
-}
-
 // Making the username in the discusison list readable and add a colored border.
 span.MItem.DiscussionAuthor
 {    
@@ -653,17 +647,62 @@ form[id="Form_Comment"]
 }
 
 // MessageForm for message editing.
-// div.MessageForm.CommentForm. - will leave unfixed for now so users can see what to identify as issue.
+// CommentForm for new message composition.
+div.MessageForm.CommentForm
+{
+  border-radius: 0;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0px rgba(0, 0, 0, .1);
+  transition: box-shadow .2s ease-in-out;
 
-// Make the box with the buttons when editing a comment/post white instead of dark blue.
-div.MessageForm.EditCommentForm
+  &:hover{
+    box-shadow: 0 0 12px rgba(0, 0, 0, .2), 0 0 2px rgba(0, 0, 0, .1);
+  }
+
+  & form
+  {
+    & div div.Buttons
+    {
+      padding-top: 0;
+    }
+  }
+}
+
+// Make the box with the buttons when composing or editing a message white, remove border and tweak padding.
+div.MessageForm
 {
     & form
     {
         & div div.Buttons
         {
-            background-color: white;
+          background-color: white;
+          border: none;
+          padding: 10px 15px;
+          padding-top: 0;
         }
+    }
+}
+
+// Make Lists within preview/edit posts look the same as the processed lists (at least for Markdown)
+form[id="Form_Comment"]
+{
+    div.Preview div.Message
+    {
+        & ul li
+        {
+            list-style: circle;
+            margin-bottom: 0;
+            margin-top: 0;
+            margin-left: 40px;
+        }
+        & ol li
+        {
+            list-style: decimal;
+            margin-bottom: 0;
+            margin-top: 0;
+            margin-left: 40px;
+        }
+
     }
 }
 
@@ -726,35 +765,60 @@ span.MItem.RoleTitle
 div.Item.ItemDiscussion{
     border: none;
     border-radius: 0;
-    & div *{
+    & div, img
+    {
       border-radius: 0;
     }
 }
 
 // Comment Item (following posts)
-li.Item.ItemComment{
-  border: none;
-  border-radius: 0;
-  & div *{
+// And not to forget the Converstions(PM's)
+div.DataListWrap,
+div.CommentsWrap,
+div.DataBox.DataBox-AcceptedAnswers
+
+{
+  li.Item{
+    border: none;
     border-radius: 0;
+    & div, img
+    {
+      border-radius: 0;
+    }
+
+    & .Comment, & .ConversationMessage
+    {
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      box-shadow: 0 0px rgba(0, 0, 0, .1);
+      transition: box-shadow .2s ease-in-out;
+
+      & .Meta{
+        border-radius: inherit;
+      }
+    
+      &:hover{
+        box-shadow: 0 0 12px rgba(0, 0, 0, .2), 0 0 2px rgba(0, 0, 0, .1);
+      }
+    }
   }
 }
 
 // Change the accepted answer comment background color
 ul.MessageList.DataList.AcceptedAnswers li div.Comment
 {
-    background-color: #c2d7f7;
+  background: linear-gradient(0.5075turn, white 66%, lightgoldenrodyellow);
 }
 
 // Change the color of the accepted QnA box and QnA tag.
 span.Tag.QnA-Box.QnA-Accepted, span.Tag.QnA-Tag-Accepted
 {
-    background-color: #2f82d0;
+  background-color: lightgoldenrodyellow;
+  color: @base-color-text;
 }
 // Change the color of the question QnA box and QnA tag.
 span.Tag.QnA-Box.QnA-Question, span.Tag.QnA-Tag-Question
 {
-    background-color: #100e2a
+  background-color: #100e2a
 }
 
 // NOTE: CSS for forum tags can be found in the TagExtended plugin!
@@ -786,15 +850,13 @@ div.Box.GuestBox
 // Change the background color of the items in the tag cloud
 ul.TagCloud li
 {
-    background-color: white;
+    background-color: inherit;
     
     border-radius: 0;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    box-shadow: 0 0px rgba(0, 0, 0, .1);
-    transition: box-shadow .2s ease-in-out;
-
-    &:hover{
-      box-shadow: 0 0 12px rgba(0, 0, 0, .2), 0 0 2px rgba(0, 0, 0, .1);
+    border-color: transparent;
+    
+    & span.Count {
+        background-color: white;
     }
 }
 
@@ -810,6 +872,36 @@ main.page-content h1.H.HomepageTitle, main.page-content h1.H
   font-weight: bold;
   color: @base-color-text-title;
 }
+
+
+// Remove the homepage title and falvor text
+h1.H.HomepageTitle, div.P.PageDescription
+{
+    display: none;
+}
+// make the Breadcrumbs bigger and chang the padding
+span.Breadcrumbs
+{
+    font-size: x-large;
+    padding: 0;
+    padding-left: 12px;
+    margin-right: 8px;
+    min-height: 43px;
+}
+// Cardify the search form.
+div.well.search-form
+{
+    min-width: 360px;
+    min-height: 43px;
+    
+    box-shadow: 0 0px rgba(0, 0, 0, .1);
+    transition: box-shadow .2s ease-in-out;
+
+    &:hover{
+        box-shadow: 0 0 12px rgba(0, 0, 0, .2), 0 0 2px rgba(0, 0, 0, .1);
+    }
+}
+
 
 // Custom styling for the categories table
 div.CategoryGroup{
@@ -850,8 +942,8 @@ table.DataTable.CategoryTable
         text-transform: lowercase;
         color: @base-color-text;
     }
-
-  // Each table row...
+    
+    // Each table row...
     & tbody tr
     {
         border-bottom-width: 1px;
@@ -875,6 +967,32 @@ table.DataTable.CategoryTable
             {
                 color: white;
                 text-transform: uppercase;
+            }
+            
+            // Make gray link text in the topic name and the meta data about the topic
+            // change color when hovered so it is easier to see.
+            & td.BlockColumn.LatestPost div
+            {
+                & div.Meta
+                {
+                    color: @godot_gray;
+                    & a
+                    {
+                        color: @godot_gray;
+                    }
+                }
+                & a.BlockTitle.LatestPostTitle
+                {
+                    color: @accent-color;
+                }
+            }
+            // Same as above, but for the discussion and comment counts
+            & td.BigCount.CountDiscussions, & td.BigCount.CountComments
+            {
+                & div span
+                {
+                    color: white;
+                }
             }
 
         }
@@ -934,12 +1052,17 @@ ul.DataList.Discussions, ul.DataList.Activities
 }
 
 // Hide the most commented box.
-// TODO: need to decide what to do with this. This is hidden in the
-// old forums though, and for good reason I think.
 div.Box.BoxLatestComment
 {
     display: none;
 }
+
+// Put line numbers on every line in Code blocks
+li.L0, li.L1, li.L2, li.L3,
+li.L5, li.L6, li.L7, li.L8 {
+  list-style-type: decimal !important;
+}
+
 
 // GodotEngine.org-like header stuff (practically copied from GodotEngine.org)
 // Note: This is kinda hacky, but it makes a similar looking result, so
@@ -1235,7 +1358,15 @@ button.sidebar-toggle
           display: block;
         }
     }
+
+    // For smaller screens change the flex direction to column 
+    .ContentTop
+    {
+      flex-direction: column;
+    }
+
 }
+
 
 // *********************************************************
 

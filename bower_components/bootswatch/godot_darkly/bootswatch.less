@@ -236,8 +236,17 @@ textarea {
   }
 }
 
-.breadcrumb a {
-  color: #fff;
+.breadcrumb
+{
+  width: auto;
+    flex-grow: 2;
+    
+    background-color: inherit;
+    border-radius: 0px;
+}
+.CrumbLabel.Last *
+{
+    color: white;
 }
 
 // Indicators =================================================================
@@ -273,8 +282,23 @@ textarea {
 
 // Containers =================================================================
 
-.well {
+.ContentTop
+{
+    display: flex;
+    flex-direction: row;
+}
+
+.well
+{
+  flex-grow: 1;
+
+  padding: 0px;
+  border: none;
   .box-shadow(none);
+
+  &:focus {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
 }
 
 a.list-group-item {
@@ -492,6 +516,18 @@ div.Box.BoxCategories
   }
 }
 
+// Side panel when editing profile
+div.Box.Group.SideMenu
+{
+    & ul.PanelInfo
+    {
+        & li a
+        {
+            color: white;
+        }
+    }
+}
+
 // Span "Count" that appears for an examle at the end of categories in the sidepanel or tags, etc.
 section.container
 {
@@ -499,30 +535,6 @@ section.container
     background-color: inherit;
     color: @base-color-text;
   }
-}
-
-// Make the light gray link text a different color when the mouse is scrolled over it.
-// This makes things, like the username, readable when scrolling over the table element.
-table.DataTable.CategoryTable
-{
-    & tbody tr:hover
-    {
-        & td.BlockColumn.LatestPost div
-        {
-            & div.Meta
-            {
-                color: @gray;
-                & a
-                {
-                    color: @gray;
-                }
-            }
-            & a.BlockTitle.LatestPostTitle
-            {
-                color: @gray;
-            }
-        }
-    }
 }
 
 // Making the username in the discusison list readable and add a colored border.
@@ -596,29 +608,52 @@ div#PagerBefore.Pager, div#PagerAfter.Pager
     }
 }
 
-// Make the box with the button when making a comment/post light-gray instead of dark blue.
-// This makes the buttons stand out a bit.
-form[id="Form_Comment"]
-{
-    & div div.Buttons
-    {
-        background-color: @base-color;
-    }
-}
-
 // MessageForm for message editing.
 // div.MessageForm.CommentForm. - will leave unfixed for now so users can see what to identify as issue.
 
-// Make the box with the buttons when editing a comment/post white instead of dark blue.
-div.MessageForm.EditCommentForm
+// Make the box with the buttons when editing a comment/post gray.
+div.MessageForm.EditCommentForm, div.FormWrapper.FormWrapper-Condensed
 {
     & form
     {
         & div div.Buttons
         {
-            background-color: @base-color;
+            background-color: @gray-dark;
+            padding-top: 4px;
+            padding-bottom: 4px;
         }
     }
+}
+
+// Make Lists within preview/edit posts look the same as the processed lists (at least for Markdown)
+form[id="Form_Comment"]
+{
+    div.Preview div.Message
+    {
+        & ul li
+        {
+            list-style: circle;
+            margin-bottom: 0;
+            margin-top: 0;
+            margin-left: 40px;
+        }
+        & ol li
+        {
+            list-style: decimal;
+            margin-bottom: 0;
+            margin-top: 0;
+            margin-left: 40px;
+        }
+
+    }
+}
+
+// Make text areas gray with white text, just like how they will be when actually posted.
+// (NOTE: Also effects the search bar.)
+.InputBox
+{
+    background-color: @gray; //@gray-lighter;
+    color: white;
 }
 
 // Making the username text color readable,
@@ -694,16 +729,32 @@ li.Item.ItemComment{
   }
 }
 
+// header elements in posts: override the color so they are visible - Twisted
+.userContent
+{
+    & h1, & h2, & h3, &h4, &h5, &h6
+    {
+        color: white;
+    }
+}
+
 // Change the accepted answer comment background color
 ul.MessageList.DataList.AcceptedAnswers li div.Comment
 {
     background-color: #142134;
 }
 
+// Change the accepted answer comment background color
+ul.MessageList.DataList.AcceptedAnswers li div.Comment
+{
+  background: linear-gradient(0.5075turn, @gray-dark 66%, #213155);
+}
+
 // Change the color of the accepted QnA box and QnA tag.
 span.Tag.QnA-Box.QnA-Accepted, span.Tag.QnA-Tag-Accepted
 {
     background-color: #2f82d0;
+    color: white;
 }
 // Change the color of the question QnA box and QnA tag.
 span.Tag.QnA-Box.QnA-Question, span.Tag.QnA-Tag-Question
@@ -740,15 +791,13 @@ div.Box.GuestBox
 // Change the background color of the items in the tag cloud
 ul.TagCloud li
 {
-    background-color: @gray;
+    background-color: inherit;
     
     border-radius: 0;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    box-shadow: 0 0px rgba(0, 0, 0, .1);
-    transition: box-shadow .2s ease-in-out;
-
-    &:hover{
-      box-shadow: 0 0 12px rgba(0, 0, 0, .2), 0 0 2px rgba(0, 0, 0, .1);
+    border-color: transparent;
+    
+    & span.Count {
+        background-color: @gray;
     }
 }
 
@@ -763,6 +812,27 @@ main.page-content h1.H.HomepageTitle, main.page-content h1.H
   text-transform: uppercase;
   font-weight: bold;
   color: @base-color-text-title;
+}
+
+// Remove the homepage title and falvor text
+h1.H.HomepageTitle, div.P.PageDescription
+{
+    display: none;
+}
+// make the Breadcrumbs bigger and chang the padding
+span.Breadcrumbs
+{
+    font-size: x-large;
+    padding: 0;
+    padding-left: 12px;
+    margin-right: 8px;
+    min-height: 43px;
+}
+// Cardify the search form.
+div.well.search-form
+{
+    min-width: 360px;
+    min-height: 43px;
 }
 
 // Custom styling for the categories table
@@ -830,6 +900,32 @@ table.DataTable.CategoryTable
                 color: white;
                 text-transform: uppercase;
             }
+            
+            // Make gray link text in the topic name and the meta data about the topic
+            // change color when hovered so it is easier to see.
+            & td.BlockColumn.LatestPost div
+            {
+                & div.Meta
+                {
+                    color: @gray-lighter;
+                    & a
+                    {
+                        color: @gray-lighter;
+                    }
+                }
+                & a.BlockTitle.LatestPostTitle
+                {
+                    color: @accent-color;
+                }
+            }
+            // Same as above, but for the discussion and comment counts
+            & td.BigCount.CountDiscussions, & td.BigCount.CountComments
+            {
+                & div span
+                {
+                    color: white;
+                }
+            }
 
         }
         
@@ -887,12 +983,27 @@ ul.DataList.Discussions, ul.DataList.Activities
     }
 }
 
+// Make the theme chooser plugin dropdown gray instead of white in GodotDarkly
+li.ThemeChooser
+{
+    & select
+    {
+        background-color: @gray;
+        color: white;
+    }
+}
+
 // Hide the most commented box.
-// TODO: need to decide what to do with this. This is hidden in the
-// old forums though, and for good reason I think.
 div.Box.BoxLatestComment
 {
     display: none;
+}
+
+// Put line numbers on every line in Code blocks
+li.L0, li.L1, li.L2, li.L3,
+li.L5, li.L6, li.L7, li.L8
+{
+  list-style-type: decimal !important;
 }
 
 // GodotEngine.org-like header stuff (practically copied from GodotEngine.org)
@@ -1188,6 +1299,12 @@ button.sidebar-toggle
           width: 100%;
           display: block;
         }
+    }
+    
+    // For smaller screens change the flex direction to column 
+    .ContentTop
+    {
+      flex-direction: column;
     }
 }
 
