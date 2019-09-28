@@ -1006,6 +1006,39 @@ li.L5, li.L6, li.L7, li.L8
   list-style-type: decimal !important;
 }
 
+// Change the size of YAGA reactions.
+span.UserReactionWrap
+{
+    & a img.ProfilePhoto
+    {
+        width: 32px;
+        height: 32px;
+        transition: width .2s ease-in-out, height .2s ease-in-out;
+    }
+    & span.ReactSprite
+    {
+        transform: scale(1);
+        transition: transform .2s ease-in-out, right .2s ease-in-out, bottom .2s ease-in-out;
+        right: -2px;
+        bottom: -2px;
+    }
+    
+    &:hover
+    {
+        & a img.ProfilePhoto
+        {
+            width: 48px;
+            height: 48px;
+        }
+        & span.ReactSprite
+        {
+            transform: scale(2);
+            right: -4px;
+            bottom: 0px;
+        }
+    }
+}
+
 // GodotEngine.org-like header stuff (practically copied from GodotEngine.org)
 // Note: This is kinda hacky, but it makes a similar looking result, so
 // I cannot complain too much. Probably needs to be redone in the future!
