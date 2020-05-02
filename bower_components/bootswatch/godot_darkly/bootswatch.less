@@ -360,7 +360,8 @@ a.list-group-item {
 
 ul.Dropdown.MenuItems
 {
-  width: 100%;
+  //width: 100%;
+  min-width: 100%;
   border-radius: 0;
 }
 
@@ -461,6 +462,29 @@ ul.PanelInfo.PanelCategories
           }
         }
       }
+    }
+}
+
+// The "in this conversation box"
+div.Box.InThisConversation
+{
+    color: white;
+    
+    *.Username
+    {
+        color: white;
+        margin-left: 4px;
+    }
+}
+// Make the username of users in private messages white
+div.ConversationMessage
+{
+    *.Name
+    {
+        // TwistedTwigleg Note: I don't want to use !important, but I do not
+        // see another way around it.
+        // TODO: find a way to not need to use !important in the CSS when possible.
+        color: white !important;
     }
 }
 
@@ -584,6 +608,15 @@ ul.DataList.Activities
     
 }
 
+// Some additional styling for the "My Drafts" page
+ul.DataList.Drafts
+{
+    *.Excerpt a
+    {
+        color: lightgray;
+    }
+}
+
 // Make the "Next" and "Previous" buttons in the activity log use white as the link color
 div.Pager.PrevNextPager
 {
@@ -626,26 +659,23 @@ div.MessageForm.EditCommentForm, div.FormWrapper.FormWrapper-Condensed
 }
 
 // Make Lists within preview/edit posts look the same as the processed lists (at least for Markdown)
-form[id="Form_Comment"]
+div.Preview div.Message
 {
-    div.Preview div.Message
+    & ul li
     {
-        & ul li
-        {
-            list-style: circle;
-            margin-bottom: 0;
-            margin-top: 0;
-            margin-left: 40px;
-        }
-        & ol li
-        {
-            list-style: decimal;
-            margin-bottom: 0;
-            margin-top: 0;
-            margin-left: 40px;
-        }
-
+        list-style: circle;
+        margin-bottom: 0;
+        margin-top: 0;
+        margin-left: 40px;
     }
+    & ol li
+    {
+        list-style: decimal;
+        margin-bottom: 0;
+        margin-top: 0;
+        margin-left: 40px;
+    }
+
 }
 
 // Make text areas gray with white text, just like how they will be when actually posted.
@@ -654,6 +684,30 @@ form[id="Form_Comment"]
 {
     background-color: @gray; //@gray-lighter;
     color: white;
+}
+// Make the tags input gray with white text
+.token-input-list
+{
+    background-color: @gray; //@gray-lighter;
+    color: white;
+    
+    // Make all child text elements use white text.
+    *
+    {
+      color:white;
+    }
+}
+// Make the category selection gray with white text.
+Select[id="Form_CategoryID"]
+{
+    background-color: @gray; //@gray-lighter;
+    color: white;
+    
+    // Make all child text elements use white text.
+    *
+    {
+      color:white;
+    }
 }
 
 // Making the username text color readable,
@@ -688,19 +742,22 @@ span.MItem.RoleTitle
     border-radius: 0;
     color: white;
     margin-right: 8px;
+    margin-left: 8px;
     background-color: @gray-dark;
     font-size: 85%;
     
     // Add some padding so it is easier to read the name of the role.
-    padding-left: 4px;
-    padding-right: 4px;
+    //  TwistedTwigleg note: I know we probably shouldn't use !important, but I'm not sure why this is not being
+    //  applied otherwise. I looked to find what was causing padding-right to always be 0, but I could not find it...
+    padding-left: 4px !important;
+    padding-right: 4px !important;
     
     // If the role is a special role, then use a special color!
     &[id="Admin"]
     {
         background-color: #3f0004;
     }
-    &[id="Mod"]
+    &[id="Mod"], &[id="Moderator"]
     {
         background-color: #be7309;
     }
